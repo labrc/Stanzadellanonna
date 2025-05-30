@@ -1,0 +1,46 @@
+{% extends 'layouts/base.html' %}
+{% load i18n %}
+
+{% load static %}
+
+{% block title %}{% trans "Reservá tu Casa ó Cabaña en Bariloche, Nahuel Malal norte| Contacto" %}  | Stanza della Nonna{% endblock %}
+
+{% block head_extra %}
+<meta name="description" content="Reservá tu estadía en Stanza della Nonna. Contactanos por WhatsApp, mail o formulario y asegurá tu casa en Bariloche sin intermediarios.">
+<meta property="og:title" content="Reservá tu Casa en Bariloche | Contacto | Stanza della Nonna">
+<meta property="og:description" content="Reservá tu estadía en Stanza della Nonna la casa de Nahuel Malal norte. Contactanos por WhatsApp, mail o formulario y asegurá tu casa en Bariloche sin intermediarios.">
+<meta property="og:image" content="https://stanzadellanonna.com.ar/img/contacto-bariloche.jpg">
+<meta property="og:url" content="https://stanzadellanonna.com.ar/contacto">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Alquiler de Casa en Bariloche con Vista al Lago | Stanza della Nonna">
+<meta name="twitter:description" content="Alquiler de casa turística en Bariloche con vista al lago. Espaciosa, luminosa y equipada para 6 personas. Ideal para descansar o explorar la Patagonia.">
+<meta name="twitter:image" content="https://stanzadellanonna.com.ar/img/casa-bariloche-portada.jpg">
+<meta name="twitter:url" content>
+{% endblock %}
+{% block content %}
+<div class="container py-5" style="max-width: 1200px;">
+  <h1 class="mb-4 text-center">Contacto</h1>
+
+  <div class="row">
+    <!-- Datos de contacto -->
+    <div class="col-md-6 mb-4">
+        <p>{% blocktrans %}¡Ponete en contacto con nosotros!</br> Somos una familia local y estaremos encantados de coordinar directamente con vos. No dudes en escribirnos.{% endblocktrans %}</p>
+      <h4>Stanza Della Nonna</h4>
+      <p><strong>{% trans "Dirección" %}:</strong> Nahuel Malal norte (km 12.600), Bariloche, Río Negro, Argentina</p>
+      <p><strong>{% trans "Teléfono" %}:</strong> <a href="https://wa.me/5492215114083" target="_blank" class="text-decoration-none text-dark">+54 9 221 511 4083</a></p>
+      <p><strong>{% trans "Email" %}:</strong><a href="mailto:info@stanzadellanonna.com.ar"> info@stanzadellanonna.com.ar </a></p>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/cabana.petite" target="_blank" class="text-decoration-none">@cabana.petite</a> ({% trans "cabaña adyacente" %})</p>
+    </div>
+
+    <!-- Mapa -->
+    <div class="col-md-6 mb-4">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d751.6214389159778!2d-71.44048501144208!3d-41.10207849041875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1743795340411!5m2!1ses!2sar"
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% load static %} 
+
+<!-- Top Header Bootstrap 5 -->
+<header class="bg-dark navbar-dark border-bottom shadow-sm" style="max-width: 1500px; margin: auto;display: block">
+  <h5 class="text-center text-white fs-6 mb-0 " style="padding:0px">Stanza Della Nonna &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; +54 9 221-5114083 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; San carlos de Bariloche</h5>
+  <div class="container-fluid d-flex justify-content-between align-items-center py-2 px-3">
+    <!-- Logo -->
+    <span class="navbar-brand fs-3 fw-bold m-0">Stanza della nonna</span>
+  
+    <!-- Menú de navegación (solo visible en desktop) -->
+    <nav class="navbar-dark d-none d-md-flex gap-3 pe-5">
+      <a href="{% url 'index' %}" class="text-decoration-none text-white">Portada</a>
+      <a href="{% url 'galeria' %}" class="text-decoration-none text-white">Fotos</a>
+      <a href="{% url 'contacto' %}" class="text-decoration-none text-white">Contacto</a>
+      <a class="text-decoration-none text-white ps-1 pe-1">|</a>
+      <a href="#login" class="text-decoration-none text-danger">Login</a>
+    </nav>
+  
+    <!-- Botón hamburguesa (solo en mobile) -->
+    <button class="btn bg-white border shadow-sm d-md-none" type="button"
+            data-bs-toggle="offcanvas" data-bs-target="#mobileMenuu" aria-label="Menú">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+           class="bi bi-list icono-menu" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+              d="M2.5 12.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11z"/>
+      </svg>
+    </button>
+  </div>     
+      
+    </div>
+  
+    <!-- Menú Offcanvas (para mobile) -->
+    <div class="offcanvas offcanvas-top" tabindex="-1" id="mobileMenuu">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Menú</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <a href="{% url 'index' %}" class="d-block mb-2">Portada</a>
+        <a href="{% url 'galeria' %}" class="d-block mb-2">Fotos</a>
+        <a href="{% url 'contacto' %}" class="d-block mb-5">Contacto</a>
+        <a href="#login" class="d-block text-danger">Login</a>
+      </div>
+    </div>
+  </header>
+  
+
+
+

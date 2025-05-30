@@ -1,0 +1,125 @@
+{%  extends 'layouts/base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block title %}{% trans "Fotos de la Casa en Alquiler en Bariloche, Nahuel Malal norte | Contacto | Stanza della Nonna" %}{% endblock %}
+{% block head_extra %}
+<meta name="description" content="Conocé la casa por dentro y por fuera: galería de fotos de Stanza della Nonna en Bariloche. Vista al lago, comodidades y entorno natural.">
+<meta property="og:title" content="Fotos de la Casa en Alquiler en Bariloche | Stanza della Nonna">
+<meta property="og:description" content="Conocé la casa por dentro y por fuera: galería de fotos de Stanza della Nonna en Bariloche, Nahuel Malal norte. Vista al lago, comodidades y entorno natural.">
+<meta property="og:image" content="https://stanzadellanonna.com.ar/img/galeria-stanza.jpg">
+<meta property="og:url" content="https://stanzadellanonna.com.ar/fotos">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Alquiler de Casa en Bariloche con Vista al Lago | Stanza della Nonna">
+<meta name="twitter:description" content="Alquiler de casa turística en Bariloche con vista al lago. Espaciosa, luminosa y equipada para 6 personas. Ideal para descansar o explorar la Patagonia.">
+<meta name="twitter:image" content="https://stanzadellanonna.com.ar/img/casa-bariloche-portada.jpg">
+<meta name="twitter:url" content>
+<style>
+    .masonry-gallery {
+        column-count: 3 !important;
+        column-gap: 1rem !importan;
+      }
+      
+      .masonry-item {
+        break-inside: avoid;
+        margin-bottom: 1rem !important;
+      }
+      
+      @media (max-width: 768px) {
+        .masonry-gallery {
+          column-count: 1 !important;
+        }
+      }
+      
+      @media (min-width: 768px) and (max-width: 992px) {
+        .masonry-gallery {
+          column-count: 2 !important;
+        }
+      }
+</style>      
+
+{% endblock %}
+{% block content %}
+<div class="container py-4">
+    <h1 class="text-center mb-4">{% trans "Galeria de imagenes" %}</h1>
+
+
+    <div class="container py-4"> 
+      <div class="mb-4" style="align-items: center; display: flex; justify-content: center; gap: 0.5rem;">
+        {% if subcarpeta %}
+            <a href="{% url 'galeria' %}" class="btn btn-outline-secondary custom-hover mb-3">{% trans "Volver" %}</a>
+        {% endif %}
+    
+        {% for carpeta in carpetas %}
+            <a href="{% url 'galeria_sub' subcarpeta|add:carpeta|add:'/' %}" class="btn btn-outline-secondary custom-hover mb-3">{{ carpeta }}</a>
+        {% endfor %}
+    </div>
+    
+        <!-- Galería de imágenes -->
+        <div class="masonry-gallery">
+            {% for imagen in imagenes %}
+              <div class="masonry-item">
+                <img src="{% static imagen %}" class="img-fluid rounded shadow"
+                     alt="Foto {{ forloop.counter }}"
+                     style="width: 100%; cursor: pointer;"
+                     data-bs-toggle="modal"
+                     data-bs-target="#imageModal"
+                     onclick="document.getElementById('modalImage').src = this.src">
+              </div>
+            {% endfor %}
+          </div>
+          
+    </div>
+    
+    <div id="imageModal" class="modal fade" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl"> 
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body text-center">
+                    <img id="modalImage" class="img-fluid rounded shadow-lg" alt="" style="max-width: 100%; max-height: 90vh;">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        .modal-backdrop {
+            backdrop-filter: blur(15px);
+            background: rgba(0, 0, 0, .38); /* Oscurece un poco el fondo */
+        }
+        .masonry {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .col {
+            display: flex;
+            justify-content: center;
+        }
+        .col img {
+            object-fit: contain;
+        }
+    </style>
+    
+    <script>
+        function openModal(element) {
+          const imgSrc = element.querySelector('img').src;
+          const modal = document.getElementById('imageModal');
+          const modalImage = document.getElementById('modalImage');
+          modalImage.src = imgSrc;
+          modal.classList.add('show');
+        }
+      
+        // Cerrar modal al hacer clic fuera de la imagen
+        window.addEventListener('click', function (e) {
+          const modal = document.getElementById('imageModal');
+          if (e.target === modal) {
+            modal.classList.remove('show');
+          }
+        });
+      </script>
+      
+{% endblock %}
+

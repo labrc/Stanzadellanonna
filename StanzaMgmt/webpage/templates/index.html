@@ -1,0 +1,78 @@
+{%  extends 'layouts/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Alquiler de Casa en Bariloche con Vista al Lago" %} | Stanza della Nonna{% endblock %}
+
+{% block head_extra %}
+{% blocktrans %}<meta name="description" content="Disfrutá de una casa cómoda y luminosa en Bariloche, Nahuel Malal norte con vista al lago . Ideal para familias, hasta 6 personas. Reservá directamente con nosotros.">
+<meta property="og:title" content="Alquiler de Casa en Bariloche con Vista al Lago | Stanza della Nonna">
+<meta property="og:description" content="Alquiler de casa turística en Bariloche con vista al lago. Espaciosa, luminosa y equipada para 6 personas. Ideal para descansar o explorar la Patagonia.">{% endblocktrans %}
+<meta property="og:image" content="https://stanzadellanonna.com.ar/img/casa-bariloche-portada.jpg">
+<meta property="og:url" content="https://stanzadellanonna.com.ar">
+<meta property="og:type" content="website">
+<!-- Carga diferida y no bloqueante de Playfair Display -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'">
+
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</noscript>
+<link rel="preload" as="image" href="{% static 'portada.webp' %}" type="image/webp">
+{% endblock %}
+{% block content %}
+<!-- Notificación moderna -->
+<div class="notification-bar text-white text-center shadow-sm">
+  🎉 Disponible a partir de <strong>Octubre 2025</strong>
+</div>
+
+    <div class="container text-center mt-2 mb-0">
+        <h1 class="display-3 fw-bold"   style="font-family: 'Playfair Display', serif;">Stanza della nonna</h1>
+        
+        <img src="{% static 'portada.webp' %}" alt="StanzaDellaNonna" 
+        class="img-fluid rounded mb-5 mt-5" 
+        width="600" height="338" 
+        style="max-width: 30%; height: auto; display: block; margin: auto;">
+    </div>
+    <div class="bg-light p-4 rounded mb-4 text-center">
+        <p class="mb-1">{% trans "Disponible para turismo y por temporadas." %}</p>
+        <p class="mb-1">{% trans "Ideal familias, hasta 6 personas." %}</p>
+        <p class="mb-1">{% trans "Dormitorio principal con baño en suite y vestidor." %}</p>
+        <p class="mb-0"> {% trans "Contacto" %}:<a href="https://wa.me/5492215114083?text=Hola!%20Te%20contacto%20desde%20la%20web."  class="mb-0" target="_blank"> +54 9 221 511-4083</a>
+        </p>
+    </div>
+    
+    <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-8">
+            <div class="mt-2 mx-auto" style="max-width: 700px;">
+                <p class="lead mt-2" style="text-align: justify;">{% trans "Con la calidez de lo familiar Stanza Della Nonna te recibe con ambientes cómodos y llenos de luz natural." %}</p>
+           
+            <div class="ratio ratio-16x9 my-4">
+              <video width="640" height="360" controls>
+                <source src="/media/stanza.mp4" type="video/mp4">
+                {% trans "Tu navegador no soporta la etiqueta de video." %}
+              </video>
+            </div>
+
+            </div>
+            <p class="lead mt-2">
+           {% blocktrans %} Las habitaciones con vista al lago logran que experimentes las mejores vistas de las montañas patagónicas desde el comienzo del día.<br>
+              Cuenta con cocina completamente equipada y amplio living, ideal para crear recuerdos en familia y disfrutar de las vistas a través de los ventanales.<br>
+              En el exterior, Deck para relajarse mirando atardeceres reflejados sobre el lago, y la península de San Pedro.<br>
+              <br>
+              Su ubicación estratégica permite en pocos pasos disfrutar de  “Bahía Serena”, playa publica local, que se encuentra a tan solo 3 cuadras de la casa.<br>
+              Disfruta el placer de caminar por la costa, contemplando las montañas en absoluta calma.<br>
+              A pocos minutos comienza Circuito Chico, un recorrido escénico rodeado de lagos, bosques y montañas, con paradas emblemáticas como el Hotel Llao Llao, la Capilla San Eduardo y miradores naturales desde donde contemplar toda la belleza de la región.<br>
+              Uno de los atractivos principales y más conocidos de la ciudad el "Cerro Catedral" se encuentra a solo 20 minutos.<br>
+              El centro de la ciudad y todas su diversidad de actividades se encuentra a 30 minutos.<br>
+              La casa está ubicada en un barrio residencial que prioriza la tranquilidad, ideal para descansar y llenarte de naturaleza.</p>{% endblocktrans %}
+          </div>
+        </div>
+      </div>
+
+
+
+{% endblock %}
