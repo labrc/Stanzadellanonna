@@ -1,0 +1,195 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-23 13:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: English <en@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\webpage\templates\contacto.html:6
+msgid "Reservá tu Casa ó Cabaña en Bariloche, Nahuel Malal norte| Contacto"
+msgstr "Book your House or Cabin in Bariloche, Nahuel Malal Norte | Contact"
+
+#: .\webpage\templates\contacto.html:28
+msgid ""
+"¡Ponete en contacto con nosotros!</br> Somos una familia local y estaremos "
+"encantados de coordinar directamente con vos. No dudes en escribirnos."
+msgstr ""
+"Get in touch with us!</br> We are a local family and will be happy to "
+"coordinate directly with you. Don't hesitate to write to us."
+
+#: .\webpage\templates\contacto.html:30
+msgid "Dirección"
+msgstr "Address"
+
+#: .\webpage\templates\contacto.html:31
+#: .\webpage\templates\layouts\base.html:113
+msgid "Teléfono"
+msgstr "Phone"
+
+#: .\webpage\templates\contacto.html:32
+msgid "Email"
+msgstr "Email"
+
+#: .\webpage\templates\contacto.html:33
+msgid "cabaña adyacente"
+msgstr "adjacent cabin"
+
+#: .\webpage\templates\galeria.html:6
+msgid ""
+"Fotos de la Casa en Alquiler en Bariloche, Nahuel Malal norte | Contacto | "
+"Stanza della Nonna"
+msgstr ""
+"Photos of the Rental House in Bariloche, Nahuel Malal Norte | Contact | "
+"Stanza della Nonna"
+
+#: .\webpage\templates\galeria.html:46
+msgid "Galeria de imagenes"
+msgstr "Image Gallery"
+
+#: .\webpage\templates\galeria.html:52
+msgid "Volver"
+msgstr "Back"
+
+#: .\webpage\templates\index.html:5
+msgid "Alquiler de Casa en Bariloche con Vista al Lago"
+msgstr "House Rental in Bariloche with Lake View"
+
+#: .\webpage\templates\index.html:8
+msgid ""
+"<meta name=\"description\" content=\"Disfrutá de una casa cómoda y luminosa "
+"en Bariloche, Nahuel Malal norte con vista al lago . Ideal para familias, "
+"hasta 6 personas. Reservá directamente con nosotros.\">\n"
+"<meta property=\"og:title\" content=\"Alquiler de Casa en Bariloche con "
+"Vista al Lago | Stanza della Nonna\">\n"
+"<meta property=\"og:description\" content=\"Alquiler de casa turística en "
+"Bariloche con vista al lago. Espaciosa, luminosa y equipada para 6 personas. "
+"Ideal para descansar o explorar la Patagonia.\">"
+msgstr ""
+"<meta name=\"description\" content=\"Enjoy a comfortable and bright house in "
+"Bariloche, Nahuel Malal Norte with lake view. Ideal for families, up to 6 "
+"people. Book directly with us.\">\n"
+"<meta property=\"og:title\" content=\"House Rental in Bariloche with Lake "
+"View | Stanza della Nonna\">\n"
+"<meta property=\"og:description\" content=\"Tourist house rental in "
+"Bariloche with lake view. Spacious, bright, and equipped for 6 people. Ideal "
+"for relaxing or exploring Patagonia.\">"
+
+#: .\webpage\templates\index.html:36
+msgid "Disponible para turismo y por temporadas."
+msgstr "Available for short-term and seasonal rental."
+
+#: .\webpage\templates\index.html:37
+msgid "Ideal familias, hasta 6 personas."
+msgstr "Ideal for families, up to 6 people."
+
+#: .\webpage\templates\index.html:38
+msgid "Dormitorio principal con baño en suite y vestidor."
+msgstr "Main bedroom with en-suite bath and dressing room"
+
+#: .\webpage\templates\index.html:39 .\webpage\templates\layouts\navbar.html:24
+#: .\webpage\templates\layouts\navbar.html:65
+msgid "Contacto"
+msgstr "Contact"
+
+#: .\webpage\templates\index.html:47
+msgid ""
+"Con la calidez de lo familiar Stanza Della Nonna te recibe con ambientes "
+"cómodos y llenos de luz natural."
+msgstr ""
+"With the warmth of a family home, Stanza Della Nonna welcomes you with cozy, "
+"light-filled spaces."
+
+#: .\webpage\templates\index.html:52
+msgid "Tu navegador no soporta la etiqueta de video."
+msgstr "Your browser does not support the video tag."
+
+#: .\webpage\templates\index.html:58
+msgid ""
+" Las habitaciones con vista al lago logran que experimentes las mejores "
+"vistas de las montañas patagónicas desde el comienzo del día.<br>\n"
+"              Cuenta con cocina completamente equipada y amplio living, "
+"ideal para crear recuerdos en familia y disfrutar de las vistas a través de "
+"los ventanales.<br>\n"
+"              En el exterior, Deck para relajarse mirando atardeceres "
+"reflejados sobre el lago, y la península de San Pedro.<br>\n"
+"              <br>\n"
+"              Su ubicación estratégica permite en pocos pasos disfrutar de  "
+"“Bahía Serena”, playa publica local, que se encuentra a tan solo 3 cuadras "
+"de la casa.<br>\n"
+"              Disfruta el placer de caminar por la costa, contemplando las "
+"montañas en absoluta calma.<br>\n"
+"              A pocos minutos comienza Circuito Chico, un recorrido escénico "
+"rodeado de lagos, bosques y montañas, con paradas emblemáticas como el Hotel "
+"Llao Llao, la Capilla San Eduardo y miradores naturales desde donde "
+"contemplar toda la belleza de la región.<br>\n"
+"              Uno de los atractivos principales y más conocidos de la ciudad "
+"el \"Cerro Catedral\" se encuentra a solo 20 minutos.<br>\n"
+"              El centro de la ciudad y todas su diversidad de actividades se "
+"encuentra a 30 minutos.<br>\n"
+"              La casa está ubicada en un barrio residencial que prioriza la "
+"tranquilidad, ideal para descansar y llenarte de naturaleza.</p>"
+msgstr ""
+" Rooms with lake views let you wake up to breathtaking sights of the "
+"Patagonian mountains.<br>\n"
+"              The house features a fully equipped kitchen and a spacious living "
+"room — perfect for making family memories and soaking in the panoramic views "
+"through large windows.<br>\n"
+"              Outdoors, a deck invites you to unwind while watching sunsets "
+"reflected on the lake and the San Pedro peninsula.<br>\n"
+"              <br>\n"
+"              Ideally located just three blocks from “Bahía Serena,” a local "
+"public beach, you'll enjoy easy access to lakeside strolls and peaceful mountain "
+"views.<br>\n"
+"              Just minutes away begins the Circuito Chico, a scenic route "
+"lined with lakes, forests, and mountains — with iconic stops like the Llao Llao "
+"Hotel, San Eduardo Chapel, and natural lookouts offering stunning regional "
+"views.<br>\n"
+"              One of Bariloche’s most famous attractions, Cerro Catedral, is "
+"only 20 minutes away.<br>\n"
+"              The vibrant city center and its many activities are just 30 minutes "
+"away.<br>\n"
+"              The house is located in a peaceful residential neighborhood, perfect "
+"for rest and immersion in nature.</p>"
+
+#: .\webpage\templates\layouts\base.html:108
+msgid "Casa de alquiler en Bariloche."
+msgstr "House for rent in Bariloche."
+
+#: .\webpage\templates\layouts\base.html:108
+msgid "Naturaleza, comodidad y descanso asegurado."
+msgstr "Nature, comfort, and guaranteed rest."
+
+#: .\webpage\templates\layouts\base.html:116
+msgid "Redes"
+msgstr "Socials"
+
+#: .\webpage\templates\layouts\base.html:123
+msgid "Todos los derechos reservados."
+msgstr "All rights reserved."
+
+#: .\webpage\templates\layouts\navbar.html:22
+#: .\webpage\templates\layouts\navbar.html:63
+msgid "Portada"
+msgstr "Home"
+
+#: .\webpage\templates\layouts\navbar.html:23
+#: .\webpage\templates\layouts\navbar.html:64
+msgid "Fotos"
+msgstr "Photos"
+
+#: .\webpage\templates\layouts\navbar.html:59
+msgid "Menú"
+msgstr "Menu"
