@@ -1,0 +1,132 @@
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - /home/fcs2/Wanderer/Web2/etc/nginx/certs:/etc/nginx/certs:ro
+      - /home/fcs2/Wanderer/Web2/etc/nginx/vhostd:/etc/nginx/vhost.d
+      - /home/fcs2/Servidor/nginx:/usr/share/nginx/html
+      - /home/fcs2/Wanderer/Web2/etc/nginx/acme:/etc/acme.sh
+    labels:
+      - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
+      - com.github.nginx-proxy.docker-gen
+    networks:
+      - nginx-proxy-network
+
+  letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    restart: always
+    environment:
+      - NGINX_PROXY_CONTAINER=nginx-proxy
+      - NGINX_DOCKER_GEN_CONTAINER=nginx-proxy
+    volumes:
+      - /home/fcs2/Wanderer/Web2/etc/nginx/certs:/etc/nginx/certs:rw
+      - /home/fcs2/Wanderer/Web2/etc/nginx/vhostd:/etc/nginx/vhost.d
+      - /home/fcs2/Servidor/nginx:/usr/share/nginx/html
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /home/fcs2/Wanderer/Web2/etc/nginx/acme:/etc/acme.sh
+    networks:
+      - nginx-proxy-network
+    ulimits:
+      nofile:
+        soft: 20480
+        hard: 20480
+
+  www:
+    image: nginx
+    restart: always
+    expose:
+      - "80"
+    volumes:
+      - /home/fcs2/Servidor/nginx:/usr/share/nginx/html:ro
+      - /home/fcs2/Servidor/conf.d:/etc/nginx/conf.d
+      - /home/fcs2/Servidor/nginx.conf:/etc/nginx/nginx.conf
+      - /home/fcs2/Servidor/django/staticfiles:/app/staticfiles  # Asegurar que coincida con STATIC_ROOT
+      - /home/fcs2/Servidor/django/media:/app/media  # Asegurar que coincida con MEDIA_ROOT
+    environment:
+      - VIRTUAL_HOST=ltec.fr.to
+      - LETSENCRYPT_HOST=ltec.fr.to
+      - LETSENCRYPT_EMAIL=lautaro@tutamail.com
+    depends_on:
+      - nginx-proxy
+      - letsencrypt
+    networks:
+      - nginx-proxy-network
+
+  django:
+    image: python:3.11
+    build: /home/fcs2/Servidor/django  # Asegúrate de que esta ruta es correcta
+    container_name: django_app
+    restart: always
+    working_dir: /app
+    volumes:
+      - /home/fcs2/Servidor/django:/app  # Código fuente de Django
+      - /home/fcs2/Servidor/django/staticfiles:/app/staticfiles  # Archivos estáticos
+      - /home/fcs2/Servidor/django/media:/app/media  # Archivos multimedia
+    expose:
+      - "8000"
+    environment:
+      - VIRTUAL_HOST=riosaustrales.dbaustral.cl
+      - LETSENCRYPT_HOST=riosaustrales.dbaustral.cl
+      - LETSENCRYPT_EMAIL=lautaro@tutamail.com
+    command: gunicorn sitio.wsgi:application --bind 0.0.0.0:8000
+    depends_on:
+      - nginx-proxy
+      - letsencrypt
+    networks:
+      - nginx-proxy-network
+
+  django-nginx:
+    image: nginx
+    restart: always
+    expose:
+      - "80"
+    volumes:
+      - /home/fcs2/Servidor/django/staticfiles:/app/staticfiles:ro
+      - /home/fcs2/Servidor/django/media:/app/media:ro
+      - /home/fcs2/Servidor/django_stanza/staticfiles:/app/stanza_staticfiles:ro
+      - /home/fcs2/Servidor/django_stanza/media:/app/stanza_media:ro
+      - /home/fcs2/Servidor/conf.d/django.conf:/etc/nginx/conf.d/default.conf:rw
+    environment:
+      - VIRTUAL_HOST=riosaustrales.dbaustral.cl,stanzadellanonna.casavar.com.ar
+      - LETSENCRYPT_HOST=riosaustrales.dbaustral.cl,stanzadellanonna.casavar.com.ar
+      - LETSENCRYPT_EMAIL=lautaro@tutamail.com
+    depends_on:
+      - django
+      - django_stanza
+      - nginx-proxy
+      - letsencrypt
+    networks:
+      - nginx-proxy-network
+      
+  django_stanza:
+      image: python:3.11
+      build: /home/fcs2/Servidor/StanzaMgmt  # Ruta para el código fuente de la nueva app
+      container_name: django_stanza_app
+      restart: always
+      working_dir: /app
+      volumes:
+        - /home/fcs2/Servidor/StanzaMgmt:/app  # Código fuente de Stanza
+        - /home/fcs2/Servidor/StanzaMgmt/static:/app/staticfiles  # Archivos estáticos de Stanza
+        - /home/fcs2/Servidor/StanzaMgmt/media:/app/media  # Archiavos multimedia de Stanza
+      expose:
+        - "8001"
+      environment:
+        - VIRTUAL_HOST=stanzadellanonna.casavar.com.ar
+        - LETSENCRYPT_HOST=stanzadellanonna.casavar.com.ar
+        - LETSENCRYPT_EMAIL=lautaro@tutamail.com
+      command: gunicorn StanzaMgmt.wsgi:application --bind 0.0.0.0:8001
+      depends_on:
+        - nginx-proxy
+        - letsencrypt
+      networks:
+        - nginx-proxy-network
+
+networks:
+  nginx-proxy-network:
+    external: true
+
