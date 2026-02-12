@@ -1,0 +1,212 @@
+{% load static %} 
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7PTPWGEMK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q7PTPWGEMK',  { 'anonymize_ip': true });
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Preconnect para mejorar fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>{% block title %}Stanza della Nonna{% endblock %}</title>
+
+{% block head_extra %}{% endblock %}
+
+<!-- Google Fonts-->
+<link href="https://fonts.googleapis.com/css2?family=Karla&family=Great+Vibes&family=Source+Sans+3&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'">
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Karla&family=Great+Vibes&family=Source+Sans+3&display=swap" rel="stylesheet">
+<script src="{% static 'preload.min.js' %}"></script>
+
+</noscript>
+<!-- Estilos base -->
+<style>
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+  }
+  .navbar-brand {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+  }
+  .navbar-nav .nav-link {
+    font-size: 1.2rem;
+  }
+  .offcanvas-top {
+    max-width: 400px;
+    width: 90%;
+    margin: 10px auto 0 auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.62);
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  a:hover {
+    color: #f39c12;
+  }
+  .offcanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1050;
+    visibility: hidden;
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    transform: translateY(-100%);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.62);
+  }
+  .offcanvas.show {
+    visibility: visible;
+    transform: translateY(0%);
+  }
+  .offcanvas-backdrop {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1040;
+  }
+  .custom-hover:hover {
+    background-color: black !important;
+    color: white !important;
+    border-color: black !important;
+}
+html, body {
+  background-color: #212529;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+</style>
+<!-- Favicon clásico -->
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+<link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
+<link rel="shortcut icon" href="{% static 'stanzafav/favicon.ico' %}" type="image/x-icon">
+
+<!-- Apple -->
+<link rel="apple-touch-icon" href="{% static 'stanzafav/apple-touch-icon.png' %}">
+
+<!-- Android / PWA -->
+<link rel="manifest" href="{% static 'stanzafav/site.webmanifest' %}">
+<meta name="theme-color" content="#000000">
+
+<!-- Opcional pero recomendado para PWA -->
+<link rel="icon" type="image/png" sizes="192x192" href="{% static 'stanzafav/android-chrome-192x192.png' %}">
+<link rel="icon" type="image/png" sizes="512x512" href="{% static 'stanzafav/android-chrome-512x512.png' %}">
+</head>
+<body>
+{% include navbar_template %}
+<main class="container-xxl flex-grow-1">
+  {% block content %}{% endblock %}
+</main>
+<footer class="bg-dark text-white py-4 mt-5">
+  <div class="container">
+
+    <div class="row">
+       <div class="col-md-3 mb-3 text-center">
+      <img src="{% static 'logob.png' %}" alt="Stanza della Nonna Logo" class="img-fluid mb-3 opacity-50" style="max-width: 200px;">
+      </div>
+      <div class="col-md-3 mb-3 text-center text-md-start">
+        <h5 class="mb-4">Stanza della Nonna</h5>
+        <p>{% trans "Casa de alquiler en Bariloche." %} <br> {% trans "Naturaleza, comodidad y descanso asegurado." %}</p>
+      </div>
+      <div class="col-md-3 mb-3 text-center text-md-start">
+        <h5 class="mb-4">Contacto</h5>
+        <p>Email: <a href="mailto:info@stanzadellanonna.com.ar" class="text-white">info@stanzadellanonna.com.ar</a></p>
+        <p>{% trans "Teléfono" %}: +54 9 221 511-4083</p>
+      </div>
+      <div class="col-md-3 mb-3 text-center text-md-start">
+        <h5 class="mb-4">{% trans "Redes" %}</h5>
+        <div class="d-flex justify-content-center justify-content-md-start gap-3 mb-3">
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/cabana.petite/" target="_blank" class="text-white me-3">
+            <svg width="24" height="24" style="fill: currentColor;" viewBox="0 0 24 24">
+              <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.9a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z"/>
+            </svg>
+          </a>
+
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/profile.php?id=100070077867305" target="_blank" class="text-white me-3">
+            <svg width="24" height="24" style="fill: currentColor;" viewBox="0 0 24 24">
+              <path d="M22 12a10 10 0 10-11.63 9.95v-7.05h-2.7v-2.9h2.7V9.1c0-2.66 1.58-4.13 4-4.13 1.16 0 2.38.21 2.38.21v2.62h-1.34c-1.32 0-1.74.82-1.74 1.66v1.99h2.96l-.47 2.9h-2.49v7.05A10 10 0 0022 12z"/>
+            </svg>
+          </a>
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/5492215114083" target="_blank" class="text-white me-3">
+            <svg width="24" height="24" style="fill: currentColor;" viewBox="0 0 32 32">
+              <path d="M16.003 3.2c-7.065 0-12.8 5.735-12.8 12.8 0 2.259.591 4.445 1.709 6.389l-1.784 6.529 6.679-1.751c1.842.997 3.922 1.524 6.195 1.524 7.065 0 12.8-5.735 12.8-12.8s-5.735-12.8-12.8-12.8zm0 23.467c-1.962 0-3.883-.516-5.561-1.489l-.398-.232-3.964 1.038 1.058-3.911-.258-.404c-1.038-1.625-1.586-3.507-1.586-5.435 0-5.646 4.595-10.24 10.24-10.24s10.24 4.595 10.24 10.24-4.594 10.233-10.233 10.233zm5.58-7.33c-.305-.153-1.806-.89-2.086-.991-.28-.102-.483-.153-.686.153s-.786.991-.964 1.194c-.178.204-.356.229-.66.077-.305-.153-1.287-.474-2.452-1.513-.905-.806-1.515-1.8-1.692-2.104-.178-.305-.019-.47.135-.622.138-.137.305-.356.458-.534.153-.178.204-.305.305-.508.102-.204.051-.382-.026-.534-.077-.153-.686-1.652-.94-2.263-.247-.593-.5-.51-.686-.52l-.583-.01c-.204 0-.534.077-.813.382s-1.067 1.04-1.067 2.534 1.093 2.938 1.245 3.14c.153.204 2.152 3.285 5.22 4.604.73.315 1.298.504 1.741.645.731.233 1.396.2 1.922.122.586-.086 1.806-.737 2.062-1.45.254-.712.254-1.322.178-1.45-.077-.127-.28-.204-.585-.356z"/>
+            </svg>
+          </a>
+
+          <!-- Airbnb -->
+          <a href="https://www.airbnb.com.ar/h/stanzadellanonnabariloche" target="_blank" class="text-white">
+            <svg width="24" height="24" style="fill: currentColor;" viewBox="0 0 24 24">
+              <path d="M12.004 2.172c-1.806 0-3.265 1.307-4.482 3.904-.888 1.878-1.776 4.228-2.605 6.694-.872 2.596-1.01 4.174-.502 5.407a4.636 4.636 0 0 0 4.365 2.823c1.297 0 2.446-.462 3.224-1.315.778.853 1.927 1.315 3.224 1.315a4.636 4.636 0 0 0 4.365-2.823c.509-1.233.37-2.811-.502-5.407-.829-2.466-1.717-4.816-2.605-6.694-1.217-2.597-2.676-3.904-4.482-3.904zm0 2c1.068 0 2.09.794 3.126 2.706.834 1.783 1.666 4.031 2.467 6.436.678 2.016.762 3.141.505 3.779a2.636 2.636 0 0 1-2.488 1.604c-.874 0-1.639-.386-2.091-1.034l-1.519-2.143-1.519 2.143a2.636 2.636 0 0 1-2.091 1.034 2.636 2.636 0 0 1-2.488-1.604c-.257-.638-.173-1.763.505-3.78.801-2.404 1.633-4.652 2.467-6.435 1.036-1.912 2.058-2.706 3.126-2.706zm0 7.412a2.416 2.416 0 1 0 0 4.832 2.416 2.416 0 0 0 0-4.832z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>    
+    <div class="text-center text-secondary mt-3">
+      © 2025 <a href="https://www.lautarorequena.com.ar/DesarrolloWeb/" class=" text-secondary">Lautaro Requena</a>. {% trans "Todos los derechos reservados." %}
+    </div>
+  </div>
+</footer>
+
+
+<!-- Scripts -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var navbarToggler = document.querySelector(".navbar-toggler");
+    var navbarCollapse = document.querySelector("#navbarNav");
+    if (navbarToggler && navbarCollapse) {
+      navbarToggler.addEventListener("click", function() {
+        navbarCollapse.classList.toggle("show");
+      });
+    }
+  });
+function prefetchLink(url) {
+  if (!document.querySelector(`link[rel="prefetch"][href="${url}"]`)) {
+    const link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.href = url;
+    document.head.appendChild(link);
+  }
+}
+function prefetchImages(imageUrls) {
+  imageUrls.forEach(url => {
+    if (!document.querySelector(`link[rel="preload"][href="${url}"]`)) {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = url;
+      document.head.appendChild(link);
+    }
+  });
+}
+
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+</body>
+</html>

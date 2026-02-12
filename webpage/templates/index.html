@@ -1,0 +1,349 @@
+{% extends 'layouts/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+{% blocktrans %}Casa estilo nórdico en Bariloche con vista al lago{% endblocktrans %} | Stanza della Nonna
+{% endblock %}
+
+{% block head_extra %}
+<meta name="description" content="{% trans 'Alquiler de casa estilo nórdico en Bariloche con vista al lago. Espaciosa, luminosa, ideal para familias. Hasta 6 personas. Reservá directo.' %}">
+<meta property="og:title" content="{% trans 'Casa estilo nórdico en Bariloche' %} | Stanza della Nonna">
+<meta property="og:description" content="{% trans 'Disfrutá de una casa luminosa y acogedora en Bariloche. Confort nórdico, vista al lago y entorno natural.' %}">
+<meta property="og:image" content="https://stanzadellanonna.com.ar/img/casa-bariloche-portada.jpg">
+<meta property="og:url" content="https://stanzadellanonna.com.ar">
+<meta property="og:type" content="website">
+
+<link rel="preload" as="image" href="{% static 'imagenes/20250410_141533.webp' %}" type="image/webp">
+<link rel="preload" as="image" href="{% static 'Panorama_hero.jpg' %}" type="image/jpeg">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer">
+
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50">
+  <div class="absolute inset-0 z-0">
+    <img src="{% static 'Panorama_hero.jpg' %}"
+         alt="{% trans 'Vista panorámica del lago Nahuel Huapi, Bariloche' %}"
+         class="w-full h-full object-cover"
+         loading="eager">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/5"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 text-center pt-20">
+    <div class="mb-12">
+      <span class="font-serif text-2xl sm:text-3xl text-gray-700 tracking-widest uppercase">
+        STANZA DELLA NONNA
+      </span>
+      <div class="w-24 h-px bg-amber-500 mx-auto mt-4"></div>
+    </div>
+
+    <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-gray-900 mb-8 tracking-tight">
+      {% blocktrans %}
+      Casa Nórdica<br>en Bariloche
+      {% endblocktrans %}
+    </h1>
+
+    <p class="text-xl sm:text-2xl lg:text-3xl text-gray-600 mb-12 max-w-3xl mx-auto font-light">
+      {% blocktrans %}
+      Vista al lago Nahuel Huapi • Diseño escandinavo • Naturaleza patagónica
+      {% endblocktrans %}
+    </p>
+
+    <a href="https://wa.me/5492215114083?text=Hola!%20Me%20interesa%20reservar%20Stanza%20della%20Nonna%20en%20Bariloche."
+       class="inline-flex items-center gap-3 bg-gray-900 hover:bg-black text-white px-8 py-4 rounded-full text-lg font-medium transition-all hover:scale-105 shadow-lg">
+      ✓ {% trans "Consultar disponibilidad" %}
+    </a>
+  </div>
+</section>
+
+<!-- About Section - Elegante y limpio -->
+<section class="py-24 bg-white">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Imagen decorativa -->
+      <div class="relative">
+        <div class="aspect-square rounded-2xl overflow-hidden shadow-2xl">
+          <img 
+            src="{% static 'imagenes/20250410_141533.webp' %}" 
+            alt="{% trans 'Interior de la casa estilo nórdico' %}" 
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+          >
+        </div>
+        <!-- Decoración -->
+        <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-amber-50 rounded-full -z-10"></div>
+      </div>
+
+      <!-- Texto -->
+      <div>
+        <div class="mb-8">
+          <span class="text-sm font-semibold text-amber-600 tracking-widest uppercase">
+            {% trans "Acerca de" %}
+          </span>
+          <h2 class="font-serif text-4xl lg:text-5xl text-gray-900 mt-2">
+            {% trans "Sobre la casa" %}
+          </h2>
+        </div>
+
+        <div class="space-y-6 text-gray-600 text-lg leading-relaxed">
+          <p>
+            {% blocktrans %}
+            Inspirada en el diseño nórdico, Stanza della Nonna ofrece una cálida estadía llena de luz, con madera natural, colores claros y grandes ventanales hacia el lago.
+            {% endblocktrans %}
+          </p>
+
+          <p>
+            {% blocktrans %}
+            Su cocina integrada, el deck con vista y el calor del hogar a leña invitan a reconectar con lo esencial.
+            {% endblocktrans %}
+          </p>
+
+          <p>
+            {% blocktrans %}
+            Cercana al centro de esquí Cerro Catedral, al Hotel Llao Llao y a senderos únicos, es ideal para explorar la Patagonia desde un lugar tranquilo y acogedor.
+            {% endblocktrans %}
+          </p>
+
+          <p class="font-serif text-gray-900 italic">
+            {% trans "Viví Bariloche con calma, estilo y comodidad." %}
+          </p>
+        </div>
+
+        <!-- Video preview -->
+        <div class="mt-12">
+          <button
+            onclick="playVideo()"
+            class="group flex items-center gap-4 text-gray-700 hover:text-gray-900 transition-colors"
+          >
+            <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-amber-50 transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <div class="text-left">
+              <span class="font-semibold">
+                {% trans "Ver recorrido virtual" %}
+              </span>
+              <p class="text-sm text-gray-500">
+                {% trans "1:30 min de video" %}
+              </p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video container -->
+    <div id="video-wrapper" class="hidden mt-16">
+      <!-- {% trans "Video se carga aquí dinámicamente" %} -->
+    </div>
+  </div>
+</section>
+
+
+<!-- AMENITIES -->
+<section class="py-24 bg-gradient-to-b from-white to-gray-50">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <div class="text-center mb-20">
+      <span class="text-sm font-semibold text-amber-600 tracking-widest uppercase block mb-4">
+        {% trans "Comodidades" %}
+      </span>
+      <h2 class="font-serif text-4xl lg:text-5xl text-gray-900 mb-6">
+        {% blocktrans %}Todo para tu confort{% endblocktrans %}
+      </h2>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+        {% blocktrans %}
+        Cada detalle pensado para una experiencia excepcional en la Patagonia
+        {% endblocktrans %}
+      </p>
+    </div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+  <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover-lift">
+    <div class="w-12 h-12 mb-4 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center">
+      <i class="fas fa-mountain text-xl"></i>
+    </div>
+    <h3 class="text-xl font-serif text-gray-900 mb-2">
+      {% trans "Estilo nórdico" %}
+    </h3>
+    <p class="text-gray-600">
+      {% trans "Ambientes amplios, mucha luz natural, madera clara y detalles minimalistas." %}
+    </p>
+  </div>
+
+  <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover-lift">
+    <div class="w-12 h-12 mb-4 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center">
+      <i class="fas fa-water text-xl"></i>
+    </div>
+    <h3 class="text-xl font-serif text-gray-900 mb-2">
+      {% trans "Vista al lago" %}
+    </h3>
+    <p class="text-gray-600">
+      {% trans "Vista al Nahuel Huapi desde el deck y los ambientes principales." %}
+    </p>
+  </div>
+
+  <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover-lift">
+    <div class="w-12 h-12 mb-4 bg-red-100 text-red-600 rounded-xl flex items-center justify-center">
+      <i class="fas fa-fire text-xl"></i>
+    </div>
+    <h3 class="text-xl font-serif text-gray-900 mb-2">
+      {% trans "Hogar a leña" %}
+    </h3>
+    <p class="text-gray-600">
+      {% trans "Chimenea moderna central, perfecta para tardes de lectura o reuniones cálidas." %}
+    </p>
+  </div>
+
+  <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover-lift">
+    <div class="w-12 h-12 mb-4 bg-green-100 text-green-600 rounded-xl flex items-center justify-center">
+      <i class="fas fa-wifi text-xl"></i>
+    </div>
+    <h3 class="text-xl font-serif text-gray-900 mb-2">
+      {% trans "WiFi rápido" %}
+    </h3>
+    <p class="text-gray-600">
+      {% trans "Ideal para teletrabajo o conectarte mientras descansás." %}
+    </p>
+  </div>
+
+  <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover-lift">
+    <div class="w-12 h-12 mb-4 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center">
+      <i class="fas fa-map-marker-alt text-xl"></i>
+    </div>
+    <h3 class="text-xl font-serif text-gray-900 mb-2">
+      {% trans "Ubicación" %}
+    </h3>
+    <p class="text-gray-600">
+      {% trans "A 3 cuadras de Bahía Serena, con acceso al Circuito Chico y al Cerro Catedral." %}
+    </p>
+  </div>
+
+  <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover-lift">
+    <div class="w-12 h-12 mb-4 bg-teal-100 text-teal-600 rounded-xl flex items-center justify-center">
+      <i class="fas fa-leaf text-xl"></i>
+    </div>
+    <h3 class="text-xl font-serif text-gray-900 mb-2">
+      {% trans "Tranquilidad" %}
+    </h3>
+    <p class="text-gray-600">
+      {% trans "Barrio residencial silencioso, ideal para descansar y reconectar con la naturaleza." %}
+    </p>
+  </div>
+
+</div>
+
+
+  </div>
+</section>
+<!-- Fotos / Galería Preview -->
+<section class="py-24 bg-gradient-to-b from-gray-50 to-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <span class="text-sm font-semibold text-amber-600 tracking-widest uppercase mb-4 block">
+        {% trans "Galería" %}
+      </span>
+      <h2 class="font-serif text-4xl lg:text-5xl text-gray-900 mb-6">
+        {% trans "Conocé la casa en imágenes" %}
+      </h2>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+        {% trans "Explorá algunos rincones de Stanza della Nonna y descubrí todos los detalles en nuestra galería completa." %}
+      </p>
+    </div>
+
+    <!-- Grid preview -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+
+  <div class="relative overflow-hidden rounded-2xl shadow-lg group">
+    <img src="{% static 'imagenes/20250410_141533.webp' %}"
+         alt="{% trans 'Foto de la casa' %}"
+         class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+         loading="lazy">
+    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+  </div>
+
+  <div class="relative overflow-hidden rounded-2xl shadow-lg group">
+    <img src="{% static 'imagenes/portada.webp' %}"
+         alt="{% trans 'Foto de la casa' %}"
+         class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+         loading="lazy">
+    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+  </div>
+
+  <div class="relative overflow-hidden rounded-2xl shadow-lg group">
+    <img src="{% static 'imagenes/iz1.webp' %}"
+         alt="{% trans 'Foto de la casa' %}"
+         class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+         loading="lazy">
+    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+  </div>
+
+  <div class="relative overflow-hidden rounded-2xl shadow-lg group">
+    <img src="{% static 'imagenes/imgaen8.webp' %}"
+         alt="{% trans 'Foto de la casa' %}"
+         class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+         loading="lazy">
+    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+  </div>
+
+
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center">
+      <a href="{% url 'galeria' %}"
+         class="inline-flex items-center gap-3 bg-gray-900 hover:bg-black text-white px-10 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-xl">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+        </svg>
+        {% trans "Ver todas las fotos" %}
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white text-center">
+  <span class="text-sm font-semibold text-amber-400 tracking-widest uppercase block mb-6">
+    {% blocktrans %}Reservá tu estadía{% endblocktrans %}
+  </span>
+
+  <h2 class="font-serif text-4xl lg:text-6xl mb-8">
+    {% blocktrans %}Tu próxima experiencia en Bariloche{% endblocktrans %}
+  </h2>
+
+  <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+    {% blocktrans %}
+    Contactanos directamente para reservar con el mejor precio o conocé más detalles en Airbnb.
+    {% endblocktrans %}
+  </p>
+
+  <div class="flex flex-col sm:flex-row gap-6 justify-center">
+    <a href="https://wa.me/5492215114083"
+       class="bg-emerald-600 hover:bg-emerald-700 px-10 py-4 rounded-full text-lg font-medium">
+      {% trans "WhatsApp Directo" %}
+    </a>
+
+    <a href="https://www.airbnb.com.ar/h/stanzadellanonnabariloche"
+       target="_blank"
+       class="bg-white text-gray-900 px-10 py-4 rounded-full text-lg font-medium">
+      {% trans "Ver en Airbnb" %}
+    </a>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{%  extends 'layouts/base_cal.html' %}
+{% load static %}
+{% block content %}
+<h2>Reservas de Airbnb</h2>
+<div class="container">
+    <h3>Reservas</h3>
+    <p>Estas son las reservas actuales:</p>
+<ul>
+    {% for reserva in reservas %}
+        <li>
+            <strong>{{ reserva.titulo }}</strong><br>
+            Inicio: {{ reserva.inicio }} <br>
+            Fin: {{ reserva.fin }}
+        </li>
+    {% endfor %}
+</ul>
+
+
+<ul>
+    <div id='calendar'></div>
+</ul
+</div>
+
+
+{% endblock %}
+
+
+
+
+

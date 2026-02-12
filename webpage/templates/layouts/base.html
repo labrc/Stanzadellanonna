@@ -1,0 +1,186 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}">
+<head>
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7PTPWGEMK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q7PTPWGEMK', { 'anonymize_ip': true });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+
+  <title>{% block title %}{% trans "Stanza della Nonna | Casa Nórdica en Bariloche" %}{% endblock %}</title>
+
+  {% block head_extra %}{% endblock %}
+
+  <!-- Preconnect fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
+  <link rel="apple-touch-icon" href="{% static 'stanzafav/apple-touch-icon.png' %}">
+</head>
+
+<body class="antialiased font-sans text-gray-900 bg-white">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="{% url 'index' %}" class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center">
+        <span class="text-white font-serif font-bold text-lg">S</span>
+      </div>
+      <span class="font-serif text-2xl">Stanza della Nonna</span>
+    </a>
+
+    <!-- Desktop menu -->
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+      <a href="{% url 'index' %}" class="hover:text-black">{% trans "La Casa" %}</a>
+      <a href="{% url 'comodidades' %}" class="hover:text-black">{% trans "Comodidades" %}</a>
+      <a href="{% url 'galeria' %}" class="hover:text-black">{% trans "Fotos" %}</a>
+      <a href="{% url 'contacto' %}" class="hover:text-black">{% trans "Contacto" %}</a>
+
+      <!-- Language toggle (UNO SOLO) -->
+      {% if LANGUAGE_CODE == 'es' %}
+        <a href="/en{{ request.path|slice:'3:' }}"
+           class="flex items-center gap-2 text-sm border border-gray-200 px-3 py-1 rounded-full hover:bg-gray-100">
+          🇺🇸 ENG
+        </a>
+      {% else %}
+        <a href="/es{{ request.path|slice:'3:' }}"
+           class="flex items-center gap-2 text-sm border border-gray-200 px-3 py-1 rounded-full hover:bg-gray-100">
+          🇦🇷 ESP
+        </a>
+      {% endif %}
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/5492215114083"
+         class="bg-gray-900 hover:bg-black text-white px-6 py-2 rounded-full">
+        {% trans "Contactar" %}
+      </a>
+    </div>
+
+    <!-- Mobile controls -->
+    <div class="md:hidden flex items-center gap-3">
+      <!-- Language toggle mobile (UNO SOLO) -->
+      {% if LANGUAGE_CODE == 'es' %}
+        <a href="/en{{ request.path|slice:'3:' }}"
+           class="text-sm border border-gray-200 px-3 py-1 rounded-full hover:bg-gray-100">
+          🇺🇸 ENG
+        </a>
+      {% else %}
+        <a href="/es{{ request.path|slice:'3:' }}"
+           class="text-sm border border-gray-200 px-3 py-1 rounded-full hover:bg-gray-100">
+          🇦🇷 ESP
+        </a>
+      {% endif %}
+
+      <button type="button" onclick="toggleMobileMenu()" aria-label="Menu"
+              class="p-2 rounded-lg hover:bg-gray-100">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu panel -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-6 space-y-4 text-sm font-medium">
+      <a href="{% url 'index' %}" class="block hover:text-black">{% trans "La Casa" %}</a>
+      <a href="{% url 'comodidades' %}" class="block hover:text-black">{% trans "Comodidades" %}</a>
+      <a href="{% url 'galeria' %}" class="block hover:text-black">{% trans "Fotos" %}</a>
+      <a href="{% url 'contacto' %}" class="block hover:text-black">{% trans "Contacto" %}</a>
+
+      <a href="https://wa.me/5492215114083"
+         class="block text-center bg-gray-900 hover:bg-black text-white px-6 py-3 rounded-full">
+        {% trans "Contactar" %}
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- CONTENT -->
+<main class="pt-20">
+  {% block content %}{% endblock %}
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-white">
+  <div class="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+
+    <!-- Brand -->
+    <div>
+      <img src="{% static 'logob.png' %}"
+           alt="Stanza della Nonna"
+           class="img-fluid mb-4 opacity-50"
+           style="max-width: 200px;">
+      <p class="text-gray-400 text-sm">
+        {% trans "Casa de alquiler en Bariloche." %}<br>
+        {% trans "Naturaleza, comodidad y descanso asegurado." %}
+      </p>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h3 class="font-serif text-lg mb-4">{% trans "Contacto" %}</h3>
+      <p class="text-gray-400 text-sm mb-2">
+        <a href="mailto:info@stanzadellanonna.com.ar" class="hover:text-white">info@stanzadellanonna.com.ar</a>
+      </p>
+      <p class="text-gray-400 text-sm">+54 9 221 511-4083</p>
+    </div>
+
+    <!-- Social -->
+    <div>
+      <h3 class="font-serif text-lg mb-4">{% trans "Seguinos" %}</h3>
+      <ul class="space-y-2 text-gray-400 text-sm">
+        <li><a class="hover:text-white" href="https://www.instagram.com/cabana.petite/" target="_blank">Instagram</a></li>
+        <li><a class="hover:text-white" href="https://www.facebook.com/profile.php?id=100070077867305" target="_blank">Facebook</a></li>
+        <li><a class="hover:text-white" href="https://www.airbnb.com.ar/h/stanzadellanonnabariloche" target="_blank">Airbnb</a></li>
+      </ul>
+    </div>
+
+    <!-- Links -->
+    <div>
+      <h3 class="font-serif text-lg mb-4">{% trans "Enlaces" %}</h3>
+      <ul class="space-y-2 text-gray-400 text-sm">
+        <li><a class="hover:text-white" href="{% url 'index' %}">{% trans "La Casa" %}</a></li>
+        <li><a class="hover:text-white" href="{% url 'comodidades' %}">{% trans "Comodidades" %}</a></li>
+        <li><a class="hover:text-white" href="{% url 'galeria' %}">{% trans "Fotos" %}</a></li>
+        <li><a class="hover:text-white" href="{% url 'contacto' %}">{% trans "Contacto" %}</a></li>
+        <li><a class="hover:text-white" href="https://wa.me/5492215114083">{% trans "Reservar" %}</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="border-t border-gray-800 py-6 text-center text-gray-500 text-sm">
+    © 2025 Stanza della Nonna · {% trans "Todos los derechos reservados." %}
+  </div>
+</footer>
+
+<script>
+  function toggleMobileMenu() {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+  }
+</script>
+
+</body>
+</html>

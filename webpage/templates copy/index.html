@@ -1,0 +1,172 @@
+{% extends 'layouts/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+{% blocktrans %}Casa estilo nórdico en Bariloche con vista al lago{% endblocktrans %} | Stanza della Nonna
+{% endblock %}
+
+{% block head_extra %}
+<meta name="description" content="{% trans 'Alquiler de casa estilo nórdico en Bariloche con vista al lago. Espaciosa, luminosa, ideal para familias. Hasta 6 personas. Reservá directo.' %}">
+<meta property="og:title" content="{% trans 'Casa estilo nórdico en Bariloche' %} | Stanza della Nonna">
+<meta property="og:description" content="{% trans 'Disfrutá de una casa luminosa y acogedora en Bariloche. Confort nórdico, vista al lago y entorno natural.' %}">
+<meta property="og:image" content="https://stanzadellanonna.com.ar/img/casa-bariloche-portada.jpg">
+<meta property="og:url" content="https://stanzadellanonna.com.ar">
+<meta property="og:type" content="website">
+
+<link rel="preload" as="image" href="{% static 'imagenes/20250410_141533.webp' %}" type="image/webp">
+<link rel="preload" as="image" href="{% static 'Panorama_hero.jpg' %}" type="image/jpeg">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50">
+  <div class="absolute inset-0 z-0">
+    <img src="{% static 'Panorama_hero.jpg' %}"
+         alt="{% trans 'Vista panorámica del lago Nahuel Huapi, Bariloche' %}"
+         class="w-full h-full object-cover"
+         loading="eager">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/5"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 text-center pt-20">
+    <div class="mb-12">
+      <span class="font-serif text-2xl sm:text-3xl text-gray-700 tracking-widest uppercase">
+        STANZA DELLA NONNA
+      </span>
+      <div class="w-24 h-px bg-amber-500 mx-auto mt-4"></div>
+    </div>
+
+    <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-gray-900 mb-8 tracking-tight">
+      {% blocktrans %}
+      Casa Nórdica<br>en Bariloche
+      {% endblocktrans %}
+    </h1>
+
+    <p class="text-xl sm:text-2xl lg:text-3xl text-gray-600 mb-12 max-w-3xl mx-auto font-light">
+      {% blocktrans %}
+      Vista al lago Nahuel Huapi • Diseño escandinavo • Naturaleza patagónica
+      {% endblocktrans %}
+    </p>
+
+    <a href="https://wa.me/5492215114083?text=Hola!%20Me%20interesa%20reservar%20Stanza%20della%20Nonna%20en%20Bariloche."
+       class="inline-flex items-center gap-3 bg-gray-900 hover:bg-black text-white px-8 py-4 rounded-full text-lg font-medium transition-all hover:scale-105 shadow-lg">
+      ✓ {% trans "Consultar disponibilidad" %}
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="py-24 bg-white">
+  <div class="max-w-5xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+    <div class="relative">
+      <div class="aspect-square rounded-2xl overflow-hidden shadow-2xl">
+        <img src="{% static 'imagenes/20250410_141533.webp' %}"
+             alt="{% trans 'Interior de la casa estilo nórdico' %}"
+             class="w-full h-full object-cover">
+      </div>
+    </div>
+
+    <div>
+      <span class="text-sm font-semibold text-amber-600 tracking-widest uppercase">
+        {% trans "Acerca de" %}
+      </span>
+
+      <h2 class="font-serif text-4xl lg:text-5xl text-gray-900 mt-2 mb-8">
+        {% blocktrans %}Sobre la casa{% endblocktrans %}
+      </h2>
+
+      <div class="space-y-6 text-gray-600 text-lg leading-relaxed">
+        <p>
+          {% blocktrans %}
+          Inspirada en el diseño nórdico, Stanza della Nonna ofrece una cálida estadía llena de luz, con madera natural, colores claros y grandes ventanales hacia el lago.
+          {% endblocktrans %}
+        </p>
+
+        <p>
+          {% blocktrans %}
+          Su cocina integrada, el deck con vista y el calor del hogar a leña invitan a reconectar con lo esencial.
+          {% endblocktrans %}
+        </p>
+
+        <p>
+          {% blocktrans %}
+          Cercana al centro de esquí Cerro Catedral, al Hotel Llao Llao y a senderos únicos, es ideal para explorar la Patagonia desde un lugar tranquilo y acogedor.
+          {% endblocktrans %}
+        </p>
+
+        <p class="italic text-gray-900 font-serif">
+          {% blocktrans %}Viví Bariloche con calma, estilo y comodidad.{% endblocktrans %}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="py-24 bg-gradient-to-b from-white to-gray-50">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <div class="text-center mb-20">
+      <span class="text-sm font-semibold text-amber-600 tracking-widest uppercase block mb-4">
+        {% trans "Comodidades" %}
+      </span>
+      <h2 class="font-serif text-4xl lg:text-5xl text-gray-900 mb-6">
+        {% blocktrans %}Todo para tu confort{% endblocktrans %}
+      </h2>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+        {% blocktrans %}
+        Cada detalle pensado para una experiencia excepcional en la Patagonia
+        {% endblocktrans %}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      {% for item in "Estilo nórdico|Vista al lago|Hogar a leña|WiFi rápido|Ubicación|Tranquilidad".split "|" %}
+      <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+        <h3 class="text-2xl font-serif text-gray-900 mb-3">
+          {% blocktrans %}{{ item }}{% endblocktrans %}
+        </h3>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="pt-32 bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white text-center">
+  <span class="text-sm font-semibold text-amber-400 tracking-widest uppercase block mb-6">
+    {% blocktrans %}Reservá tu estadía{% endblocktrans %}
+  </span>
+
+  <h2 class="font-serif text-4xl lg:text-6xl mb-8">
+    {% blocktrans %}Tu próxima experiencia en Bariloche{% endblocktrans %}
+  </h2>
+
+  <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+    {% blocktrans %}
+    Contactanos directamente para reservar con el mejor precio o conocé más detalles en Airbnb.
+    {% endblocktrans %}
+  </p>
+
+  <div class="flex flex-col sm:flex-row gap-6 justify-center">
+    <a href="https://wa.me/5492215114083"
+       class="bg-emerald-600 hover:bg-emerald-700 px-10 py-4 rounded-full text-lg font-medium">
+      {% trans "WhatsApp Directo" %}
+    </a>
+
+    <a href="https://www.airbnb.com.ar/h/stanzadellanonnabariloche"
+       target="_blank"
+       class="bg-white text-gray-900 px-10 py-4 rounded-full text-lg font-medium">
+      {% trans "Ver en Airbnb" %}
+    </a>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,936 @@
+{% extends 'layouts/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+{% trans "Comodidades y Servicios | Stanza della Nonna | Casa en Bariloche" %}
+{% endblock %}
+
+{% block head_extra %}
+<meta name="description" content="Todas las comodidades de Stanza della Nonna en Bariloche: WiFi rápido, cocina equipada, chimenea, vista al lago, Netflix y más. Todo lo que necesitás para una estadía perfecta.">
+<meta property="og:title" content="Comodidades | Stanza della Nonna | Casa en Bariloche">
+<meta property="og:description" content="Descubrí todas las comodidades que ofrece nuestra casa nórdica en Bariloche. Desde la chimenea central hasta la cocina totalmente equipada.">
+<meta property="og:image" content="https://stanzadellanonna.com.ar/img/comodidades-bariloche.jpg">
+<meta property="og:url" content="https://stanzadellanonna.com.ar/comodidades">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Comodidades de la Casa en Bariloche | Stanza della Nonna">
+<meta name="twitter:description" content="WiFi rápido, chimenea, cocina equipada, vista al lago y todas las comodidades para tu estadía en Bariloche.">
+
+<style>
+    /* Animaciones */
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+    
+    /* Cards con gradientes */
+    .amenity-card {
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        border: 1px solid rgba(229, 231, 235, 0.8);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .amenity-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(245, 158, 11, 0.1);
+        border-color: #f59e0b;
+    }
+    
+    /* Icon containers */
+    .icon-wrapper {
+        width: 70px;
+        height: 70px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    
+    /* Categorías de comodidades */
+    .category-badge {
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        border: 2px solid;
+    }
+    
+    /* Sección hero */
+    .hero-gradient {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+    
+    /* Grid layout */
+    .amenities-grid {
+        display: grid;
+        gap: 1.5rem;
+    }
+    
+    @media (min-width: 640px) {
+        .amenities-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media (min-width: 1024px) {
+        .amenities-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    
+    /* Counter animation */
+    .counter-item {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .counter-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #f59e0b, #d97706);
+        transform: translateX(-100%);
+        transition: transform 0.6s ease;
+    }
+    
+    .counter-item:hover::before {
+        transform: translateX(0);
+    }
+    
+    /* Highlight effect */
+    .highlight-box {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .highlight-box::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .highlight-box:hover::after {
+        opacity: 1;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-gradient pt-24 pb-16 md:pt-32 md:pb-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <span class="inline-block px-4 py-2 bg-amber-500/20 text-amber-300 rounded-full text-sm font-semibold mb-6">
+                {% trans "Todo incluido" %}
+            </span>
+            <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-white mb-6">
+                {% trans "Comodidades" %}
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+                {% trans "Todo lo que necesitás para una estadía perfecta en Bariloche. Desde la chimenea central hasta el WiFi rápido, cada detalle está pensado para tu confort." %}
+            </p>
+            
+            <!-- Quick stats -->
+            <div class="flex flex-wrap justify-center gap-8 md:gap-12 mb-12">
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white mb-2">6</div>
+                    <div class="text-gray-400">{% trans "Huéspedes" %}</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white mb-2">3</div>
+                    <div class="text-gray-400">{% trans "Dormitorios" %}</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white mb-2">3</div>
+                    <div class="text-gray-400">{% trans "Baños" %}</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white mb-2">30+</div>
+                    <div class="text-gray-400">{% trans "Comodidades" %}</div>
+                </div>
+            </div>
+            
+            <!-- CTA -->
+            <a href="#all-amenities" class="inline-flex items-center gap-3 bg-white hover:bg-gray-100 text-gray-900 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+                {% trans "Ver todas las comodidades" %}
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Amenities -->
+<section class="py-16 bg-gradient-to-b from-white to-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="font-serif text-3xl md:text-4xl text-gray-900 mb-6">
+                {% trans "Destacados" %}
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                {% trans "Las comodidades más valoradas por nuestros huéspedes" %}
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Vista al lago -->
+            <div class="amenity-card rounded-2xl p-8 text-center highlight-box">
+                <div class="icon-wrapper bg-blue-50 mb-6">
+                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">{% trans "Vista al lago Nahuel Huapi" %}</h3>
+                <p class="text-gray-600 text-sm">{% trans "Panorámica desde el deck y ventanales principales" %}</p>
+            </div>
+            
+            <!-- Chimenea -->
+            <div class="amenity-card rounded-2xl p-8 text-center highlight-box">
+                <div class="icon-wrapper bg-red-50 mb-6">
+                    <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">{% trans "Chimenea a leña con parrilla" %}</h3>
+                <p class="text-gray-600 text-sm">{% trans "Calefacción principal y ambiente acogedor" %}</p>
+            </div>
+            
+            <!-- WiFi -->
+            <div class="amenity-card rounded-2xl p-8 text-center highlight-box">
+                <div class="icon-wrapper bg-purple-50 mb-6">
+                    <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">{% trans "WiFi rápido (300 Mbps)" %}</h3>
+                <p class="text-gray-600 text-sm">{% trans "Fibra óptica ideal para teletrabajo" %}</p>
+            </div>
+            
+            <!-- Cocina -->
+            <div class="amenity-card rounded-2xl p-8 text-center highlight-box">
+                <div class="icon-wrapper bg-emerald-50 mb-6">
+                    <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">{% trans "Cocina totalmente equipada" %}</h3>
+                <p class="text-gray-600 text-sm">{% trans "Cocina equipada con horno a gas, heladera, microondas, pava eléctrica y cafetera" %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- All Amenities Section - VERSIÓN CORREGIDA -->
+<!-- All Amenities Section - VERSIÓN CORREGIDA -->
+<section id="all-amenities" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="font-serif text-3xl md:text-4xl text-gray-900 mb-6">
+                {% trans "Todas las comodidades" %}
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                {% trans "Todo lo que encontrarás en Stanza della Nonna para tu comodidad" %}
+            </p>
+        </div>
+        
+        <!-- Categorías actualizadas -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <button onclick="filterAmenities('all')" class="category-badge bg-amber-100 text-amber-800 border-amber-300 hover:bg-amber-200 transition-colors cursor-pointer">
+                {% trans "Todas" %}
+            </button>
+            <button onclick="filterAmenities('house')" class="category-badge bg-blue-100 text-blue-800 border-blue-300 hover:bg-blue-200 transition-colors cursor-pointer">
+                {% trans "La Casa" %}
+            </button>
+            <button onclick="filterAmenities('kitchen')" class="category-badge bg-emerald-100 text-emerald-800 border-emerald-300 hover:bg-emerald-200 transition-colors cursor-pointer">
+                {% trans "Cocina" %}
+            </button>
+            <button onclick="filterAmenities('bedroom')" class="category-badge bg-purple-100 text-purple-800 border-purple-300 hover:bg-purple-200 transition-colors cursor-pointer">
+                {% trans "Dormitorios" %}
+            </button>
+            <button onclick="filterAmenities('bathroom')" class="category-badge bg-cyan-100 text-cyan-800 border-cyan-300 hover:bg-cyan-200 transition-colors cursor-pointer">
+                {% trans "Baños" %}
+            </button>
+            <button onclick="filterAmenities('tech')" class="category-badge bg-gray-100 text-gray-800 border-gray-300 hover:bg-gray-200 transition-colors cursor-pointer">
+                {% trans "Tecnología" %}
+            </button>
+            <button onclick="filterAmenities('exterior')" class="category-badge bg-green-100 text-green-800 border-green-300 hover:bg-green-200 transition-colors cursor-pointer">
+                {% trans "Exterior" %}
+            </button>
+            <button onclick="filterAmenities('security')" class="category-badge bg-red-100 text-red-800 border-red-300 hover:bg-red-200 transition-colors cursor-pointer">
+                {% trans "Seguridad" %}
+            </button>
+        </div>
+        
+        <!-- Grid de comodidades REORGANIZADO (más relevantes primero) -->
+        <div class="amenities-grid">
+            <!-- LAS MÁS RELEVANTES Y ATRACTIVAS -->
+            
+            <!-- WiFi - Muy importante -->
+            <div class="amenity-card rounded-2xl p-6 category-tech" data-category="tech">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "Tecnología" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "WiFi 300 Mbps" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Fibra óptica para trabajo y streaming" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chimenea con parrilla - Muy atractiva -->
+            <div class="amenity-card rounded-2xl p-6 category-house" data-category="house">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-red-100 text-red-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "La Casa" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "Chimenea a leña con parrilla" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Ambiente acogedor con posibilidad de asados" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vista al lago - Punto fuerte -->
+            <div class="amenity-card rounded-2xl p-6 category-house" data-category="house">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "La Casa" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "Vista al lago Nahuel Huapi" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Desde el deck y ventanales principales" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Deck con vista -->
+            <div class="amenity-card rounded-2xl p-6 category-exterior" data-category="exterior">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "Exterior" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "Deck de madera con vista" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Mobiliario exterior para disfrutar del paisaje" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cocina equipada - Muy importante -->
+            <div class="amenity-card rounded-2xl p-6 category-kitchen" data-category="kitchen">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "Cocina" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "Cocina completamente equipada" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Todo para preparar tus comidas" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Smart TV -->
+            <div class="amenity-card rounded-2xl p-6 category-tech" data-category="tech">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-gray-100 text-gray-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "Tecnología" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "Smart TV 55'' con HDMI" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Amazon Fire TV para streaming" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Parrilla/Chulengo exterior -->
+            <div class="amenity-card rounded-2xl p-6 category-exterior" data-category="exterior">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-orange-100 text-orange-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "Exterior" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "Parrilla/Chulengo completo" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Mesa, sillas y utensilios para asados" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Calefacción por caldera -->
+            <div class="amenity-card rounded-2xl p-6 category-house" data-category="house">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-amber-100 text-amber-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "La Casa" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "Calefacción por caldera" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Radiadores en todos los ambientes" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AGUA CALIENTE (sistema bueno) -->
+            <div class="amenity-card rounded-2xl p-6 category-bathroom" data-category="bathroom">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-cyan-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-cyan-100 text-cyan-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "Baños" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "Agua caliente de alto rendimiento" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Sistema eficiente para uso continuo" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Electrodomésticos de cocina -->
+            <div class="amenity-card rounded-2xl p-6 category-kitchen" data-category="kitchen">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "Cocina" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "Electrodomésticos completos" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Heladera, microondas, cafetera express, licuadora" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ESTACIONAMIENTO - Importante -->
+            <div class="amenity-card rounded-2xl p-6 category-security" data-category="security">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-red-100 text-red-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "Seguridad" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "Estacionamiento dentro del predio" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Espacio privado y seguro para vehículos" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- DORMITORIOS cómodos -->
+            <div class="amenity-card rounded-2xl p-6 category-bedroom" data-category="bedroom">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "Dormitorios" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "Ropa de cama incluida" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Sábanas, edredones y mantas para todos" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- BAÑOS completos -->
+            <div class="amenity-card rounded-2xl p-6 category-bathroom" data-category="bathroom">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-cyan-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-cyan-100 text-cyan-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "Baños" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "2 baños completos + toilette" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Comodidad para todos los huéspedes" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vajilla completa -->
+            <div class="amenity-card rounded-2xl p-6 category-kitchen" data-category="kitchen">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "Cocina" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "Vajilla para 6 personas" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Todo lo necesario para preparar y servir comidas" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Toallas -->
+            <div class="amenity-card rounded-2xl p-6 category-bathroom" data-category="bathroom">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-cyan-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-cyan-100 text-cyan-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "Baños" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "Toallas y toallones incluidos" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "1 juego completo por huésped" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Almohadas ergonómicas -->
+            <div class="amenity-card rounded-2xl p-6 category-bedroom" data-category="bedroom">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "Dormitorios" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "Almohadas ergonómicas" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Almohadas de foam para mejor descanso" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Alarma de seguridad -->
+            <div class="amenity-card rounded-2xl p-6 category-security" data-category="security">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-red-100 text-red-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "Seguridad" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "Alarma de seguridad" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Sistema con respuesta vecinal inmediata" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Iluminación exterior -->
+            <div class="amenity-card rounded-2xl p-6 category-exterior" data-category="exterior">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "Exterior" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "Iluminación exterior" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Ambientación para noches al aire libre" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tendedero exterior -->
+            <div class="amenity-card rounded-2xl p-6 category-exterior" data-category="exterior">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "Exterior" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "Tendedero exterior" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Espacio para secar ropa al aire libre" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Guardarropas -->
+            <div class="amenity-card rounded-2xl p-6 category-bedroom" data-category="bedroom">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "Dormitorios" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "Guardarropas y almacenamiento" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Amplio espacio para guardar pertenencias" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Iluminación dormitorios -->
+            <div class="amenity-card rounded-2xl p-6 category-bedroom" data-category="bedroom">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "Dormitorios" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "Iluminación en cada dormitorio" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Veladores/lámparas para lectura y descanso" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Secador de pelo -->
+            <div class="amenity-card rounded-2xl p-6 category-bathroom" data-category="bathroom">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-cyan-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0m0 0l-6 6m6-6l6 6"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-cyan-100 text-cyan-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "Baños" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "Secador de pelo" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Disponible para uso de los huéspedes" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Extintor -->
+            <div class="amenity-card rounded-2xl p-6 category-security" data-category="security">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-red-100 text-red-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "Seguridad" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "Extintor" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Equipo de seguridad contra incendios" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 3 dormitorios -->
+            <div class="amenity-card rounded-2xl p-6 category-house" data-category="house">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full mb-2">
+                            {% trans "La Casa" %}
+                        </span>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">{% trans "3 dormitorios" %}</h4>
+                        <p class="text-gray-600 text-sm">{% trans "Espacios cómodos y acogedores" %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
+<!-- Included Services -->
+<section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="font-serif text-3xl md:text-4xl text-gray-900 mb-6">
+                {% trans "Servicios incluidos" %}
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                {% trans "Todo lo que está incluido en tu estadía, sin costos adicionales" %}
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center">
+                        <svg class="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">{% trans "Servicios básicos" %}</h3>
+                </div>
+                <ul class="space-y-3 text-gray-600">
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        {% trans "Agua, luz y gas" %}
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        {% trans "WiFi de alta velocidad" %}
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        {% trans "Netflix y streaming" %}
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center">
+                        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">{% trans "Seguridad" %}</h3>
+                </div>
+                <ul class="space-y-3 text-gray-600">
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        {% trans "Alarma monitoreada 24/7" %}
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        {% trans "Estacionamiento dentro del predio" %}
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center">
+                        <svg class="w-7 h-7 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905a3.61 3.61 0 01-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">{% trans "Extras" %}</h3>
+                </div>
+                <ul class="space-y-3 text-gray-600">
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        {% trans "Leña para chimenea" %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Final -->
+<section class="py-20 bg-gradient-to-br from-amber-500 to-amber-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="font-serif text-3xl md:text-4xl text-white mb-6">
+            {% trans "¿Listo para disfrutar de todas estas comodidades?" %}
+        </h2>
+        <p class="text-amber-100 text-lg mb-10 max-w-2xl mx-auto">
+            {% trans "Reservá tu estadía ahora y viví la experiencia completa de Stanza della Nonna" %}
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+            <a href="https://wa.me/5492215114083?text=Hola!%20Vi%20las%20comodidades%20de%20Stanza%20della%20Nonna%20y%20quiero%20reservar." class="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-amber-700 px-10 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.91-9.91-9.91zm5.23 13.58c-.33.92-1.59 1.68-2.58 1.87-.57.1-1.31.18-2.25-.37-.75-.43-1.29-1.01-2.04-1.61-1.42-1.17-2.35-2.62-2.58-2.97-.23-.35-.19-.8.08-1.12.24-.30.56-.47.94-.47.21 0 .42.05.60.16.18.10.42.31.67.56.25.25.49.55.70.83.19.26.39.52.56.77.17.25.31.50.44.73.13.23.23.45.30.66.07.21.10.40.10.58 0 .17-.03.33-.08.48-.05.15-.12.29-.21.42z"/>
+                </svg>
+                {% trans "Reservar por WhatsApp" %}
+            </a>
+            <a href="{% url 'galeria' %}" class="inline-flex items-center justify-center gap-3 bg-transparent hover:bg-amber-600 text-white px-10 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 border-2 border-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                {% trans "Ver fotos" %}
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Filtro de categorías
+    function filterAmenities(category) {
+        const amenities = document.querySelectorAll('.amenity-card');
+        const categoryButtons = document.querySelectorAll('.category-badge');
+        
+        // Remover active de todos los botones
+        categoryButtons.forEach(btn => {
+            btn.classList.remove('bg-amber-500', 'text-white', 'border-amber-500');
+            btn.classList.add('hover:bg-opacity-80');
+        });
+        
+        // Activar botón seleccionado
+        event.currentTarget.classList.add('bg-amber-500', 'text-white', 'border-amber-500');
+        event.currentTarget.classList.remove('hover:bg-opacity-80');
+        
+        // Filtrar tarjetas
+        amenities.forEach(card => {
+            if (category === 'all' || card.dataset.category === category) {
+                card.style.display = 'block';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 10);
+            } else {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 300);
+            }
+        });
+    }
+    
+    // Mostrar más comodidades (lazy loading)
+    document.getElementById('show-more-btn').addEventListener('click', function() {
+        const hiddenCards = document.querySelectorAll('.amenity-card[style*="display: none"]');
+        const btn = this;
+        
+        if (hiddenCards.length > 0) {
+            // Mostrar 6 tarjetas más
+            for (let i = 0; i < Math.min(6, hiddenCards.length); i++) {
+                setTimeout(() => {
+                    hiddenCards[i].style.display = 'block';
+                    setTimeout(() => {
+                        hiddenCards[i].style.opacity = '1';
+                        hiddenCards[i].style.transform = 'translateY(0)';
+                    }, 10);
+                }, i * 100);
+            }
+            
+            // Ocultar botón si no hay más tarjetas
+            setTimeout(() => {
+                if (document.querySelectorAll('.amenity-card[style*="display: none"]').length === 0) {
+                    btn.style.display = 'none';
+                }
+            }, 600);
+        }
+    });
+    
+    // Animación de contadores
+    function animateCounters() {
+        const counters = document.querySelectorAll('.counter-item');
+        counters.forEach(counter => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, { threshold: 0.5 });
+            observer.observe(counter);
+        });
+    }
+    
+    // Inicializar
+    document.addEventListener('DOMContentLoaded', function() {
+        animateCounters();
+        
+        // Scroll suave para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}  

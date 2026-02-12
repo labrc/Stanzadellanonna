@@ -1,0 +1,1324 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Stanza della Nonna\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-17 15:37-0300\n"
+"PO-Revision-Date: 2026-01-17 16:00-0300\n"
+"Last-Translator: Stanza della Nonna <info@stanzadellanonna.com.ar>\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# =========================
+# CONTACTO
+# =========================
+#: ⁨webpage/templates copy/contacto.html⁩:5 webpage/templates/contacto.html:5
+msgid "Reservá tu Casa ó Cabaña en Bariloche, Nahuel Malal norte| Contacto"
+msgstr "Book Your House or Cabin in Bariloche, Nahuel Malal Norte | Contact"
+
+#: ⁨webpage/templates copy/contacto.html⁩:139
+#: ⁨webpage/templates copy/contacto.html⁩:228
+msgid "Contacto Directo"
+msgstr "Direct Contact"
+
+#: ⁨webpage/templates copy/contacto.html⁩:142
+msgid "Reservá tu experiencia"
+msgstr "Book your experience"
+
+#: ⁨webpage/templates copy/contacto.html⁩:145
+msgid ""
+"Coordiná directamente con nosotros, sin intermediarios, para obtener el "
+"mejor precio y atención personalizada."
+msgstr ""
+"Coordinate directly with us, without intermediaries, to get the best price "
+"and personalized attention."
+
+#: ⁨webpage/templates copy/contacto.html⁩:156 webpage/templates/contacto.html:169
+msgid "Contactar por WhatsApp"
+msgstr "Contact via WhatsApp"
+
+#: ⁨webpage/templates copy/contacto.html⁩:162
+msgid "Respuesta en minutos - Descuento por reserva directa"
+msgstr "Reply in minutes – Discount for direct booking"
+
+#: ⁨webpage/templates copy/contacto.html⁩:183 webpage/templates/contacto.html:182
+msgid "¡Somos una familia local!"
+msgstr "We're a local family!"
+
+#: ⁨webpage/templates copy/contacto.html⁩:185 webpage/templates/contacto.html:185
+msgid ""
+"Estaremos encantados de coordinar directamente con vos. No dudes en "
+"escribirnos para cualquier consulta sobre tu estadía en Bariloche."
+msgstr ""
+"We'd be happy to coordinate directly with you. Don't hesitate to reach out "
+"with any questions about your stay in Bariloche."
+
+#: ⁨webpage/templates copy/contacto.html⁩:203 webpage/templates/index.html:226
+#: webpage/templates/layouts/navbar.html:55
+#: webpage/templates/layouts/navbar.html:119
+msgid "Ubicación"
+msgstr "Location"
+
+#: ⁨webpage/templates copy/contacto.html⁩:206
+msgid "Casa"
+msgstr "House"
+
+#: ⁨webpage/templates copy/contacto.html⁩:207
+msgid "Dirección"
+msgstr "Address"
+
+#: ⁨webpage/templates copy/contacto.html⁩:213 webpage/templates/contacto.html:213
+msgid "Zona tranquila con vista al lago Nahuel Huapi"
+msgstr "Quiet area with views of Lake Nahuel Huapi"
+
+#: ⁨webpage/templates copy/contacto.html⁩:269
+#: webpage/templates/layouts/base.html:152
+#: webpage/templates/layouts/navbar.html:105
+msgid "Seguinos"
+msgstr "Follow us"
+
+#: ⁨webpage/templates copy/contacto.html⁩:282 webpage/templates/contacto.html:267
+msgid "cabaña adyacente"
+msgstr "adjacent cabin"
+
+#: ⁨webpage/templates copy/contacto.html⁩:308
+msgid "Ubicación aproximada - Te enviamos las indicaciones exactas al reservar"
+msgstr "Approximate location – Exact directions are sent after booking"
+
+#: ⁨webpage/templates copy/contacto.html⁩:315 webpage/templates/contacto.html:300
+msgid "Ventajas de reservar directo"
+msgstr "Benefits of booking direct"
+
+#: ⁨webpage/templates copy/contacto.html⁩:324
+msgid "Mejor precio"
+msgstr "Best price"
+
+#: ⁨webpage/templates copy/contacto.html⁩:325 webpage/templates/contacto.html:308
+#, python-format
+msgid "Hasta 15%% menos que plataformas intermediarias"
+msgstr "Up to 15%% less than booking platforms"
+
+#: ⁨webpage/templates copy/contacto.html⁩:336 webpage/templates/contacto.html:317
+msgid "Atención personalizada"
+msgstr "Personalized attention"
+
+#: ⁨webpage/templates copy/contacto.html⁩:337 webpage/templates/contacto.html:318
+msgid "Coordinación directa con los dueños"
+msgstr "Direct coordination with the owners"
+
+#: ⁨webpage/templates copy/contacto.html⁩:348
+msgid "Flexibilidad"
+msgstr "Flexibility"
+
+#: ⁨webpage/templates copy/contacto.html⁩:349
+msgid "Check-in/out adaptables según tu viaje"
+msgstr "Flexible check-in and check-out"
+
+#: ⁨webpage/templates copy/contacto.html⁩:360
+msgid "Recomendaciones locales"
+msgstr "Local recommendations"
+
+#: ⁨webpage/templates copy/contacto.html⁩:361
+msgid "Consejos personalizados para tu estadía"
+msgstr "Personalized tips for your stay"
+
+#: ⁨webpage/templates copy/contacto.html⁩:375 webpage/templates/contacto.html:344
+msgid "Hacé todas tus preguntas"
+msgstr "Ask all your questions"
+
+#: ⁨webpage/templates copy/contacto.html⁩:388 webpage/templates/contacto.html:356
+msgid "Preguntas frecuentes"
+msgstr "Frequently asked questions"
+
+#: ⁨webpage/templates copy/contacto.html⁩:391 webpage/templates/contacto.html:359
+msgid "Respondemos las dudas más comunes sobre tu reserva"
+msgstr "We answer the most common questions about your booking"
+
+#: ⁨webpage/templates copy/contacto.html⁩:399 webpage/templates/contacto.html:367
+msgid "¿Cómo funciona el pago?"
+msgstr "How does payment work?"
+
+#: ⁨webpage/templates copy/contacto.html⁩:405 webpage/templates/contacto.html:370
+#, python-format
+msgid ""
+"Pedimos una seña del 30%% para confirmar la reserva. El saldo restante se "
+"paga al check-in. Aceptamos transferencias bancarias y Mercado Pago."
+msgstr ""
+"We require a 30%% deposit to confirm the booking. The remaining balance is "
+"paid at check-in. We accept bank transfers and Mercado Pago."
+
+#: ⁨webpage/templates copy/contacto.html⁩:412 webpage/templates/contacto.html:377
+msgid "¿Qué incluye la estadía?"
+msgstr "What does the stay include?"
+
+#: ⁨webpage/templates copy/contacto.html⁩:418
+msgid ""
+"Incluye todos los servicios (agua, luz, gas), WiFi, ropa de cama, toallas y "
+"cocina totalmente equipada. También te dejamos leña para la chimenea."
+msgstr ""
+"It includes all utilities (water, electricity, gas), WiFi, bed linen, "
+"towels, and a fully equipped kitchen. Firewood for the fireplace is also "
+"provided."
+
+#: ⁨webpage/templates copy/contacto.html⁩:425 webpage/templates/contacto.html:387
+msgid "¿Cómo es el check-in y check-out?"
+msgstr "How are check-in and check-out?"
+
+#: ⁨webpage/templates copy/contacto.html⁩:431 webpage/templates/contacto.html:390
+msgid ""
+"Check-in a partir de las 15:00 hs y check-out hasta las 11:00 hs. Podemos "
+"ser flexibles según disponibilidad. Te enviamos las indicaciones exactas "
+"antes de tu llegada."
+msgstr ""
+"Check-in is from 3:00 PM and check-out until 11:00 AM. We can be flexible "
+"depending on availability. Exact directions are sent before your arrival."
+
+#: ⁨webpage/templates copy/contacto.html⁩:438 webpage/templates/contacto.html:397
+msgid "¿Tenés otra pregunta?"
+msgstr "Do you have another question?"
+
+#: ⁨webpage/templates copy/contacto.html⁩:441 webpage/templates/contacto.html:400
+msgid "Escribinos por WhatsApp"
+msgstr "Write to us on WhatsApp"
+
+# =========================
+# GALERÍA
+# =========================
+#: ⁨webpage/templates copy/galeria.html⁩:6 webpage/templates/galeria.html:5
+msgid ""
+"Fotos de la Casa en Alquiler en Bariloche, Nahuel Malal norte | Contacto | "
+"Stanza della Nonna"
+msgstr ""
+"Photos of the Rental House in Bariloche, Nahuel Malal Norte | Contact | "
+"Stanza della Nonna"
+
+#: ⁨webpage/templates copy/galeria.html⁩:46
+msgid "Galeria de imagenes"
+msgstr "Image gallery"
+
+#: ⁨webpage/templates copy/galeria.html⁩:52 webpage/templates/galeria.html:134
+msgid "Volver"
+msgstr "Back"
+
+# =========================
+# HOME / HERO / ABOUT
+# =========================
+#: ⁨webpage/templates copy/index copy.html⁩:5 ⁨webpage/templates/index copy.html⁩:5
+msgid "Alquiler de Casa en Bariloche con Vista al Lago"
+msgstr "House Rental in Bariloche with Lake View"
+
+#: ⁨webpage/templates copy/index copy.html⁩:8 ⁨webpage/templates/index copy.html⁩:8
+msgid ""
+"<meta name=\"description\" content=\"Disfrutá de una casa cómoda y luminosa "
+"en Bariloche, Nahuel Malal norte con vista al lago . Ideal para familias, "
+"hasta 6 personas. Reservá directamente con nosotros.\">\n"
+"<meta property=\"og:title\" content=\"Alquiler de Casa en Bariloche con "
+"Vista al Lago | Stanza della Nonna\">\n"
+"<meta property=\"og:description\" content=\"Alquiler de casa turística en "
+"Bariloche con vista al lago. Espaciosa, luminosa y equipada para 6 personas. "
+"Ideal para descansar o explorar la Patagonia.\">"
+msgstr ""
+"<meta name=\"description\" content=\"Enjoy a comfortable and bright house in "
+"Bariloche, Nahuel Malal Norte with lake views. Ideal for families, up to 6 "
+"guests. Book directly with us.\">\n"
+"<meta property=\"og:title\" content=\"House Rental in Bariloche with Lake "
+"View | Stanza della Nonna\">\n"
+"<meta property=\"og:description\" content=\"Tourist house rental in "
+"Bariloche with lake views. Spacious, bright, and fully equipped for 6 "
+"guests. Ideal for relaxing or exploring Patagonia.\">"
+
+#: ⁨webpage/templates copy/index copy.html⁩:46
+#: ⁨webpage/templates/index copy.html⁩:46
+msgid "Disponible desde octubre 2025. ¡Gracias por tu interés!"
+msgstr "Available from October 2025. Thank you for your interest!"
+
+#: ⁨webpage/templates copy/index copy.html⁩:61
+#: ⁨webpage/templates/index copy.html⁩:61
+msgid "Disponible para turismo y por temporadas."
+msgstr "Available for tourism and seasonal stays."
+
+#: ⁨webpage/templates copy/index copy.html⁩:62
+#: ⁨webpage/templates/index copy.html⁩:62
+msgid "Ideal familias, hasta 6 personas."
+msgstr "Ideal for families, up to 6 guests."
+
+#: ⁨webpage/templates copy/index copy.html⁩:63
+#: ⁨webpage/templates/index copy.html⁩:63
+msgid "Calidez, comodidad y hermosa vista al lago Nahuel Huapi."
+msgstr "Warm, comfortable spaces with beautiful views of Lake Nahuel Huapi."
+
+#: ⁨webpage/templates copy/index copy.html⁩:64
+#: ⁨webpage/templates copy/layouts/navbar.html⁩:44
+#: ⁨webpage/templates copy/layouts/navbar.html⁩:109
+#: webpage/templates/contacto.html:156 ⁨webpage/templates/index copy.html⁩:64
+#: webpage/templates/layouts/base.html:58
+#: webpage/templates/layouts/base.html:110
+#: webpage/templates/layouts/base.html:143
+#: webpage/templates/layouts/base.html:167
+#: webpage/templates/layouts/navbar.html:98
+msgid "Contacto"
+msgstr "Contact"
+
+#: ⁨webpage/templates copy/index copy.html⁩:72
+#: ⁨webpage/templates/index copy.html⁩:72
+msgid ""
+"Con la calidez de lo familiar Stanza Della Nonna te recibe con ambientes "
+"cómodos y llenos de luz natural."
+msgstr ""
+"With the warmth of a family home, Stanza della Nonna welcomes you with "
+"comfortable spaces filled with natural light."
+
+#: ⁨webpage/templates copy/index copy.html⁩:77
+#: ⁨webpage/templates/index copy.html⁩:77
+msgid "Tu navegador no soporta la etiqueta de video."
+msgstr "Your browser does not support the video tag."
+
+#: ⁨webpage/templates copy/index copy.html⁩:83
+#: ⁨webpage/templates/index copy.html⁩:83
+#, fuzzy
+#| msgid ""
+#| "Desde todas las habitaciones podrás disfrutar de las mejores vistas al "
+#| "lago Nahuel Huapi y a las montañas patagónicas desde el comienzo del día, "
+#| "a través de sus ventanales.<br>\n"
+#| "<br>\n"
+#| "Cuenta con cocina completamente equipada y un amplio living con una gran "
+#| "chimenea, ideal para crear recuerdos en familia.<br>\n"
+#| "El gran deck exterior invita a relajarse contemplando los atardeceres "
+#| "reflejados sobre el lago y la península de San Pedro.<br>\n"
+#| "<br>\n"
+#| "Su ubicación estratégica permite, a pocos pasos, acceder a la costa del "
+#| "lago y disfrutar de 'Bahía Serena', la playa pública local, ubicada a tan "
+#| "solo 3 cuadras de la casa.<br>\n"
+#| "Caminar por la costa por las mañanas, contemplando las montañas y las "
+#| "aves en absoluta calma, es un verdadero placer.<br>\n"
+#| "<br>\n"
+#| "La casa se encuentra a mitad de camino entre el centro de Bariloche y el "
+#| "Hotel Llao Llao, con acceso directo al Circuito Chico: un recorrido "
+#| "escénico rodeado de lagos, bosques y montañas, con paradas emblemáticas "
+#| "como el Hotel Llao Llao, la Capilla San Eduardo y miradores panorámicos "
+#| "de la belleza de la región.<br>\n"
+#| "<br>\n"
+#| "Uno de los principales atractivos de la ciudad, el centro de esquí Cerro "
+#| "Catedral, está a solo 20 minutos.<br>\n"
+#| "El centro de Bariloche y su gran variedad de actividades están a solo 30 "
+#| "minutos.<br>\n"
+#| "<br>\n"
+#| "La casa está ubicada en un barrio residencial que prioriza el silencio y "
+#| "la tranquilidad, ideal para descansar y reconectarse con la naturaleza."
+#| "<br>\n"
+#| "Con la particular ventaja de estar a tan solo tres cuadras de la Avenida "
+#| "Bustillo, donde encontrarás todo tipo de comercios, supermercados, "
+#| "cervecerías y parada de transporte público."
+msgid ""
+"Desde todas las habitaciones podrás disfrutar de las mejores vistas al lago "
+"Nahuel Huapi y a las montañas patagónicas desde el comienzo del día, a "
+"través de sus ventanales.<br>\n"
+"<br>\n"
+"Cuenta con cocina completamente equipada y un amplio living con una gran "
+"chimenea, ideal para crear recuerdos en familia.<br>\n"
+"El gran deck exterior invita a relajarse contemplando los atardeceres "
+"reflejados sobre el lago y la península de San Pedro.<br>\n"
+"<br>\n"
+"Su ubicación estratégica permite, a pocos pasos, acceder a la costa del lago "
+"y disfrutar de “Bahía Serena”, la playa pública local, ubicada a tan solo 3 "
+"cuadras de la casa.<br>\n"
+"Caminar por la costa por las mañanas, contemplando las montañas y las aves "
+"en absoluta calma, es un verdadero placer.<br>\n"
+"<br>\n"
+"La casa se encuentra a mitad de camino entre el centro de Bariloche y el "
+"Hotel Llao Llao, con acceso directo al Circuito Chico: un recorrido escénico "
+"rodeado de lagos, bosques y montañas, con paradas emblemáticas como el Hotel "
+"Llao Llao, la Capilla San Eduardo y miradores panorámicos de la belleza de "
+"la región.<br>\n"
+"<br>\n"
+"Uno de los principales atractivos de la ciudad, el centro de esquí Cerro "
+"Catedral, está a solo 20 minutos.<br>\n"
+"El centro de Bariloche y su gran variedad de actividades están a solo 30 "
+"minutos.<br>\n"
+"<br>\n"
+"La casa está ubicada en un barrio residencial que prioriza el silencio y la "
+"tranquilidad, ideal para descansar y reconectarse con la naturaleza.<br>\n"
+"Con la particular ventaja de estar a tan solo tres cuadras de la Avenida "
+"Bustillo, donde encontrarás todo tipo de comercios, supermercados, "
+"cervecerías y parada de transporte público."
+msgstr ""
+"From all rooms, you can enjoy the best views of Lake Nahuel Huapi and the "
+"Patagonian mountains through the large windows from the start of the day."
+"<br>\n"
+"<br>\n"
+"It features a fully equipped kitchen and a spacious living room with a large "
+"fireplace, ideal for creating family memories.<br>\n"
+"The large outdoor deck invites you to relax while watching sunsets reflected "
+"on the lake and the San Pedro peninsula.<br>\n"
+"<br>\n"
+"Thanks to its strategic location, you can reach the lake shore and enjoy "
+"Bahía Serena, the local public beach, just 3 blocks from the house.<br>\n"
+"Walking along the shore in the mornings, contemplating the mountains and "
+"birds in absolute calm, is a true pleasure.<br>\n"
+"<br>\n"
+"The house is halfway between downtown Bariloche and the Llao Llao Hotel, "
+"with direct access to Circuito Chico: a scenic route surrounded by lakes, "
+"forests, and mountains, with iconic stops like Llao Llao Hotel, San Eduardo "
+"Chapel, and panoramic viewpoints of the region's beauty.<br>\n"
+"<br>\n"
+"One of the city's main attractions, Cerro Catedral ski resort, is just 20 "
+"minutes away.<br>\n"
+"Downtown Bariloche and its wide variety of activities are only 30 minutes "
+"away.<br>\n"
+"<br>\n"
+"The house is located in a residential neighborhood that prioritizes silence "
+"and tranquility, ideal for resting and reconnecting with nature.<br>\n"
+"With the particular advantage of being just three blocks from Avenida "
+"Bustillo, where you'll find all kinds of shops, supermarkets, breweries, and "
+"public transportation stops."
+
+# =========================
+# HOME / HERO / ABOUT - NUEVA VERSIÓN
+# =========================
+#: ⁨webpage/templates copy/index.html⁩:6 webpage/templates/index.html:6
+msgid "Casa estilo nórdico en Bariloche con vista al lago"
+msgstr "Nordic-style house in Bariloche with lake views"
+
+#: ⁨webpage/templates copy/index.html⁩:10 webpage/templates/index.html:10
+msgid ""
+"Alquiler de casa estilo nórdico en Bariloche con vista al lago. Espaciosa, "
+"luminosa, ideal para familias. Hasta 6 personas. Reservá directo."
+msgstr ""
+"Nordic-style house rental in Bariloche with lake views. Spacious, bright, "
+"ideal for families. Up to 6 guests. Book directly."
+
+#: ⁨webpage/templates copy/index.html⁩:11 webpage/templates/index.html:11
+msgid "Casa estilo nórdico en Bariloche"
+msgstr "Nordic-style house in Bariloche"
+
+#: ⁨webpage/templates copy/index.html⁩:12 webpage/templates/index.html:12
+msgid ""
+"Disfrutá de una casa luminosa y acogedora en Bariloche. Confort nórdico, "
+"vista al lago y entorno natural."
+msgstr ""
+"Enjoy a bright and cozy house in Bariloche. Nordic comfort, lake views and a "
+"natural setting."
+
+#: ⁨webpage/templates copy/index.html⁩:29 webpage/templates/index.html:35
+msgid "Vista panorámica del lago Nahuel Huapi, Bariloche"
+msgstr "Panoramic view of Lake Nahuel Huapi, Bariloche"
+
+#: ⁨webpage/templates copy/index.html⁩:44 webpage/templates/index.html:50
+msgid ""
+"\n"
+"      Casa Nórdica<br>en Bariloche\n"
+"      "
+msgstr ""
+"\n"
+"      Nordic House in Bariloche"
+
+#: ⁨webpage/templates copy/index.html⁩:50 webpage/templates/index.html:56
+msgid ""
+"\n"
+"      Vista al lago Nahuel Huapi • Diseño escandinavo • Naturaleza "
+"patagónica\n"
+"      "
+msgstr ""
+"\n"
+"      Lake Nahuel Huapi views • Scandinavian design • Patagonian nature      "
+
+#: ⁨webpage/templates copy/index.html⁩:57 webpage/templates/index.html:63
+msgid "Consultar disponibilidad"
+msgstr "Check availability"
+
+#: ⁨webpage/templates copy/index.html⁩:69 webpage/templates/index.html:78
+msgid "Interior de la casa estilo nórdico"
+msgstr "Interior of the Nordic-style house"
+
+#: ⁨webpage/templates copy/index.html⁩:76 webpage/templates/index.html:90
+msgid "Acerca de"
+msgstr "About"
+
+#: ⁨webpage/templates copy/index.html⁩:80 webpage/templates/index.html:93
+msgid "Sobre la casa"
+msgstr "About the house"
+
+#: ⁨webpage/templates copy/index.html⁩:85
+msgid ""
+"\n"
+"          Inspirada en el diseño nórdico, Stanza della Nonna ofrece una "
+"cálida estadía llena de luz, con madera natural, colores claros y grandes "
+"ventanales hacia el lago.\n"
+"          "
+msgstr ""
+"\n"
+"          Inspired by Nordic design, Stanza della Nonna offers a bright and "
+"warm stay featuring natural wood, light colors, and large windows "
+"overlooking the lake."
+
+#: ⁨webpage/templates copy/index.html⁩:91
+msgid ""
+"\n"
+"          Su cocina integrada, el deck con vista y el calor del hogar a leña "
+"invitan a reconectar con lo esencial.\n"
+"          "
+msgstr ""
+"\n"
+"          Its open kitchen, lake-view deck, and wood-burning fireplace "
+"invite you to reconnect with what matters most."
+
+#: ⁨webpage/templates copy/index.html⁩:97
+msgid ""
+"\n"
+"          Cercana al centro de esquí Cerro Catedral, al Hotel Llao Llao y a "
+"senderos únicos, es ideal para explorar la Patagonia desde un lugar "
+"tranquilo y acogedor.\n"
+"          "
+msgstr ""
+"\n"
+"          Close to Cerro Catedral ski resort, Llao Llao Hotel, and unique "
+"hiking trails, it's the perfect base for exploring Patagonia from a peaceful "
+"and welcoming home."
+
+#: ⁨webpage/templates copy/index.html⁩:103 webpage/templates/index.html:117
+msgid "Viví Bariloche con calma, estilo y comodidad."
+msgstr "Experience Bariloche with calm, style, and comfort."
+
+#: ⁨webpage/templates copy/index.html⁩:116 webpage/templates/comodidades.html:142
+#: webpage/templates/comodidades.html:164 webpage/templates/index.html:159
+#: webpage/templates/layouts/base.html:56
+#: webpage/templates/layouts/base.html:108
+#: webpage/templates/layouts/base.html:165
+#: webpage/templates/layouts/navbar.html:54
+#: webpage/templates/layouts/navbar.html:118
+msgid "Comodidades"
+msgstr "Amenities"
+
+#: ⁨webpage/templates copy/index.html⁩:119 webpage/templates/index.html:162
+msgid "Todo para tu confort"
+msgstr "Everything for your comfort"
+
+#: ⁨webpage/templates copy/index.html⁩:122 webpage/templates/index.html:165
+msgid ""
+"\n"
+"        Cada detalle pensado para una experiencia excepcional en la "
+"Patagonia\n"
+"        "
+msgstr ""
+"\n"
+"        Every detail thoughtfully designed for an exceptional Patagonian "
+"experience"
+
+#: ⁨webpage/templates copy/index.html⁩:133
+#, python-format
+msgid "%(item)s"
+msgstr "%(item)s"
+
+# =========================
+# CTA / GLOBAL
+# =========================
+#: ⁨webpage/templates copy/index.html⁩:145 webpage/templates/index.html:322
+msgid "Reservá tu estadía"
+msgstr "Book your stay"
+
+#: ⁨webpage/templates copy/index.html⁩:149 webpage/templates/index.html:326
+msgid "Tu próxima experiencia en Bariloche"
+msgstr "Your next experience in Bariloche"
+
+#: ⁨webpage/templates copy/index.html⁩:153 webpage/templates/index.html:330
+msgid ""
+"\n"
+"    Contactanos directamente para reservar con el mejor precio o conocé más "
+"detalles en Airbnb.\n"
+"    "
+msgstr ""
+"\n"
+"          Contact us directly to book at the best price or learn more on "
+"Airbnb.    "
+
+#: ⁨webpage/templates copy/index.html⁩:161 webpage/templates/index.html:338
+msgid "WhatsApp Directo"
+msgstr "WhatsApp Direct"
+
+#: ⁨webpage/templates copy/index.html⁩:167 webpage/templates/index.html:344
+msgid "Ver en Airbnb"
+msgstr "View on Airbnb"
+
+# =========================
+# LAYOUTS / BASE
+# =========================
+#: ⁨webpage/templates copy/layouts/base.html⁩:129
+#: webpage/templates/layouts/base.html:136
+msgid "Casa de alquiler en Bariloche."
+msgstr "House rental in Bariloche."
+
+#: ⁨webpage/templates copy/layouts/base.html⁩:129
+#: webpage/templates/layouts/base.html:137
+msgid "Naturaleza, comodidad y descanso asegurado."
+msgstr "Nature, comfort, and guaranteed relaxation."
+
+#: ⁨webpage/templates copy/layouts/base.html⁩:134
+msgid "Teléfono"
+msgstr "Phone"
+
+#: ⁨webpage/templates copy/layouts/base.html⁩:137
+msgid "Redes"
+msgstr "Social"
+
+#: ⁨webpage/templates copy/layouts/base.html⁩:170
+#: webpage/templates/layouts/base.html:175
+#: webpage/templates/layouts/navbar.html:127
+msgid "Todos los derechos reservados."
+msgstr "All rights reserved."
+
+#: ⁨webpage/templates copy/layouts/navbar.html⁩:33
+#: ⁨webpage/templates copy/layouts/navbar.html⁩:97
+msgid "Inicio"
+msgstr "Home"
+
+#: ⁨webpage/templates copy/layouts/navbar.html⁩:39
+#: ⁨webpage/templates copy/layouts/navbar.html⁩:103
+#: webpage/templates/layouts/base.html:57
+#: webpage/templates/layouts/base.html:109
+#: webpage/templates/layouts/base.html:166
+msgid "Fotos"
+msgstr "Photos"
+
+#: ⁨webpage/templates copy/layouts/navbar.html⁩:90
+msgid "Menú"
+msgstr "Menu"
+
+# =========================
+# COMODIDADES
+# =========================
+#: webpage/templates/comodidades.html:6
+msgid "Comodidades y Servicios | Stanza della Nonna | Casa en Bariloche"
+msgstr "Amenities & Services | Stanza della Nonna | House in Bariloche"
+
+#: webpage/templates/comodidades.html:139
+msgid "Todo incluido"
+msgstr "All included"
+
+#: webpage/templates/comodidades.html:145
+msgid ""
+"Todo lo que necesitás para una estadía perfecta en Bariloche. Desde la "
+"chimenea central hasta el WiFi rápido, cada detalle está pensado para tu "
+"confort."
+msgstr ""
+"Everything you need for a perfect stay in Bariloche. From the central "
+"fireplace to high-speed WiFi, every detail is designed for your comfort."
+
+
+#: webpage/templates/comodidades.html:152
+msgid "Huéspedes"
+msgstr "Guests"
+
+#: webpage/templates/comodidades.html:156
+#: webpage/templates/comodidades.html:265
+#: webpage/templates/comodidades.html:363
+#: webpage/templates/comodidades.html:380
+msgid "Dormitorios"
+msgstr "Bedrooms"
+
+#: webpage/templates/comodidades.html:160
+#: webpage/templates/comodidades.html:268
+#: webpage/templates/comodidades.html:398
+#: webpage/templates/comodidades.html:415
+msgid "Baños"
+msgstr "Bathrooms"
+
+#: webpage/templates/comodidades.html:173
+#, fuzzy
+#| msgid "Ver todas las fotos"
+msgid "Ver todas las comodidades"
+msgstr "View all photos"
+
+#: webpage/templates/comodidades.html:184
+msgid "Destacados"
+msgstr "Highlights"
+
+#: webpage/templates/comodidades.html:187
+msgid "Las comodidades más valoradas por nuestros huéspedes"
+msgstr "The amenities most appreciated by our guests"
+
+
+#: webpage/templates/comodidades.html:200
+#, fuzzy
+#| msgid "Zona tranquila con vista al lago Nahuel Huapi"
+msgid "Vista al lago Nahuel Huapi"
+msgstr "Quiet area with views of Lake Nahuel Huapi"
+
+#: webpage/templates/comodidades.html:201
+#, fuzzy
+#| msgid "Vista al Nahuel Huapi desde el deck y los ambientes principales."
+msgid "Panorámica desde el deck y ventanales principales"
+msgstr "Views of Lake Nahuel Huapi from the deck and main living areas."
+
+#: webpage/templates/comodidades.html:212
+#, fuzzy
+#| msgid "Chimenea a leña"
+msgid "Chimenea central a leña"
+msgstr "Wood-burning fireplace"
+
+#: webpage/templates/comodidades.html:213
+msgid "Calefacción principal y ambiente acogedor"
+msgstr "Primary heating and a warm, cozy atmosphere"
+
+#: webpage/templates/comodidades.html:223
+#, fuzzy
+#| msgid "WiFi rápido"
+msgid "WiFi rápido (300 Mbps)"
+msgstr "Fast WiFi"
+
+#: webpage/templates/comodidades.html:234
+#, fuzzy
+#| msgid "Cocina equipada"
+msgid "Cocina totalmente equipada"
+msgstr "Fully equipped kitchen"
+
+#: webpage/templates/comodidades.html:246
+#, fuzzy
+#| msgid "Comodidades"
+msgid "Todas las comodidades"
+msgstr "Amenities"
+
+
+
+
+#: webpage/templates/comodidades.html:274
+#: webpage/templates/comodidades.html:468
+#: webpage/templates/comodidades.html:485
+#, fuzzy
+#| msgid "Deck y exterior"
+msgid "Exterior"
+msgstr "Deck & outdoor space"
+
+#: webpage/templates/comodidades.html:295
+#, fuzzy
+#| msgid "Chimenea a leña"
+msgid "Chimenea a leña central"
+msgstr "Wood-burning fireplace"
+
+#: webpage/templates/comodidades.html:382
+#, fuzzy
+#| msgid "Tres dormitorios cómodos, con ropa de cama y toallas incluidas."
+msgid "Ropa de cama y toallas incluidas"
+msgstr "Three comfortable bedrooms, with bed linens and towels provided."
+
+#: webpage/templates/comodidades.html:383
+msgid "Todo lo necesario para tu comodidad"
+msgstr ""
+
+#: webpage/templates/comodidades.html:400
+#, fuzzy
+#| msgid "Baños completos"
+msgid "2 baños completos"
+msgstr "Full bathrooms"
+
+#: webpage/templates/comodidades.html:401
+#, fuzzy
+#| msgid "Dos baños completos, uno en suite y otro compartido."
+msgid "Uno en suite principal y otro compartido"
+msgstr "Two full bathrooms, one en suite and one shared."
+
+#: webpage/templates/comodidades.html:417
+msgid "Agua caliente las 24hs"
+msgstr ""
+
+#: webpage/templates/comodidades.html:418
+msgid "Calefón a gas con suministro constante"
+msgstr ""
+
+#: webpage/templates/comodidades.html:435
+msgid "Smart TV 55'' con Netflix"
+msgstr ""
+
+#: webpage/templates/comodidades.html:436
+msgid "Televisor inteligente con acceso a plataformas de streaming"
+msgstr ""
+
+#: webpage/templates/comodidades.html:452
+msgid "WiFi 300 Mbps simétricos"
+msgstr ""
+
+#: webpage/templates/comodidades.html:453
+msgid "Fibra óptica, ideal para teletrabajo"
+msgstr ""
+
+#: webpage/templates/comodidades.html:470
+#, fuzzy
+#| msgid "Vista al lago"
+msgid "Deck con vista al lago"
+msgstr "Lake view"
+
+#: webpage/templates/comodidades.html:471
+#, fuzzy
+#| msgid "Amplio deck con vista al lago, mesa y sillas exteriores."
+msgid "Amplio deck de madera con mobiliario exterior"
+msgstr "Spacious deck with lake views, outdoor table and chairs."
+
+#: webpage/templates/comodidades.html:487
+msgid "Chulengo"
+msgstr ""
+
+#: webpage/templates/comodidades.html:488
+msgid "Incluye mesa, sillas y elementos de asador"
+msgstr ""
+
+#: webpage/templates/comodidades.html:505
+msgid "Alarma monitoreada"
+msgstr ""
+
+#: webpage/templates/comodidades.html:506
+msgid "Sistema de seguridad 24hs para tu tranquilidad"
+msgstr ""
+
+#: webpage/templates/comodidades.html:522
+#: webpage/templates/comodidades.html:640
+#, fuzzy
+#| msgid "Estacionamiento dentro del predio."
+msgid "Estacionamiento dentro del predio"
+msgstr "On-site parking available."
+
+#: webpage/templates/comodidades.html:523
+#, fuzzy
+#| msgid "Estacionamiento dentro del predio."
+msgid "Espacio para vehículos dentro de la propiedad"
+msgstr "On-site parking available."
+
+#: webpage/templates/comodidades.html:540
+msgid "Sistema de audio"
+msgstr ""
+
+#: webpage/templates/comodidades.html:541
+msgid "Parlantes Bluetooth para conectar tu música"
+msgstr ""
+
+#: webpage/templates/comodidades.html:557
+msgid "Microondas y pava eléctrica"
+msgstr ""
+
+#: webpage/templates/comodidades.html:558
+msgid "Electrodomésticos adicionales para mayor comodidad"
+msgstr ""
+
+#: webpage/templates/comodidades.html:567
+#, fuzzy
+#| msgid "Comodidades"
+msgid "Ver más comodidades"
+msgstr "Amenities"
+
+#: webpage/templates/comodidades.html:581
+#, fuzzy
+#| msgid "Todo incluido"
+msgid "Servicios incluidos"
+msgstr "All included"
+
+#: webpage/templates/comodidades.html:584
+msgid "Todo lo que está incluido en tu estadía, sin costos adicionales"
+msgstr ""
+
+#: webpage/templates/comodidades.html:596
+msgid "Servicios básicos"
+msgstr ""
+
+#: webpage/templates/comodidades.html:603
+msgid "Agua, luz y gas"
+msgstr ""
+
+#: webpage/templates/comodidades.html:609
+#, fuzzy
+#| msgid "Internet de alta velocidad"
+msgid "WiFi de alta velocidad"
+msgstr "High-speed internet"
+
+#: webpage/templates/comodidades.html:615
+msgid "Netflix y streaming"
+msgstr ""
+
+#: webpage/templates/comodidades.html:627
+msgid "Seguridad"
+msgstr "Security"
+
+#: webpage/templates/comodidades.html:634
+msgid "Alarma monitoreada 24/7"
+msgstr ""
+
+#: webpage/templates/comodidades.html:652
+msgid "Extras"
+msgstr ""
+
+#: webpage/templates/comodidades.html:659
+msgid "Leña para chimenea"
+msgstr ""
+
+#: webpage/templates/comodidades.html:671
+#, fuzzy
+#| msgid "¿Listo para disfrutar tu estadía en Bariloche?"
+msgid "¿Listo para disfrutar de todas estas comodidades?"
+msgstr "Ready to enjoy your stay in Bariloche?"
+
+#: webpage/templates/comodidades.html:674
+msgid ""
+"Reservá tu estadía ahora y viví la experiencia completa de Stanza della Nonna"
+msgstr ""
+
+#: webpage/templates/comodidades.html:681
+msgid "Reservar por WhatsApp"
+msgstr "Book via WhatsApp"
+
+#: webpage/templates/comodidades.html:687
+#, fuzzy
+#| msgid "Ver todas las fotos"
+msgid "Ver fotos"
+msgstr "View all photos"
+
+# =========================
+# CONTACTO - NUEVAS TRADUCCIONES
+# =========================
+#: webpage/templates/contacto.html:159
+msgid ""
+"Coordiná directamente con nosotros para una experiencia personalizada en "
+"Bariloche"
+msgstr "Coordinate directly with us for a personalized experience in Bariloche"
+
+#: webpage/templates/contacto.html:219
+msgid "Contacto directo"
+msgstr "Direct contact"
+
+#: webpage/templates/contacto.html:277
+msgid "Ubicación en Bariloche"
+msgstr "Location in Bariloche"
+
+#: webpage/templates/contacto.html:294
+msgid "Te enviamos las indicaciones exactas al reservar"
+msgstr "We'll send you exact directions after booking"
+
+#: webpage/templates/contacto.html:307
+msgid "Mejor precio garantizado"
+msgstr "Best price guaranteed"
+
+#: webpage/templates/contacto.html:327
+msgid "Flexibilidad total"
+msgstr "Total flexibility"
+
+#: webpage/templates/contacto.html:328
+msgid "Check-in/out adaptables a tu viaje"
+msgstr "Flexible check-in and check-out times"
+
+#: webpage/templates/contacto.html:348
+msgid "Te respondemos en minutos con toda la información que necesitás"
+msgstr "We reply within minutes with all the information you need"
+
+#: webpage/templates/contacto.html:380
+msgid ""
+"Incluye todos los servicios (agua, luz, gas), WiFi, ropa de cama, toallas y "
+"cocina totalmente equipada."
+msgstr ""
+"Includes all utilities (water, electricity, gas), WiFi, bed linens, towels, "
+"and a fully equipped kitchen."
+
+# =========================
+# GALERÍA - NUEVAS TRADUCCIONES
+# =========================
+#: webpage/templates/galeria.html:102
+msgid "Galería Visual"
+msgstr "Visual Gallery"
+
+#: webpage/templates/galeria.html:105
+msgid "Descubrí la casa"
+msgstr "Discover the house"
+
+#: webpage/templates/galeria.html:108
+msgid ""
+"Explorá cada rincón de Stanza della Nonna a través de nuestra galería "
+"fotográfica."
+msgstr "Explore every corner of Stanza della Nonna through our photo gallery."
+
+#: webpage/templates/galeria.html:117 webpage/templates/index.html:257
+msgid "Galería"
+msgstr "Gallery"
+
+#: webpage/templates/galeria.html:167 webpage/templates/index.html:272
+#: webpage/templates/index.html:280 webpage/templates/index.html:288
+#: webpage/templates/index.html:296
+msgid "Foto de la casa"
+msgstr "House photo"
+
+#: webpage/templates/galeria.html:180
+msgid "Ver imagen"
+msgstr "View image"
+
+#: webpage/templates/galeria.html:192
+msgid "imágenes"
+msgstr "images"
+
+#: webpage/templates/galeria.html:194
+msgid "en"
+msgstr "in"
+
+#: webpage/templates/galeria.html:204
+msgid "No hay imágenes disponibles"
+msgstr "No images available"
+
+#: webpage/templates/galeria.html:206
+msgid ""
+"Actualmente no hay imágenes en esta categoría. Pronto agregaremos más "
+"contenido."
+msgstr ""
+"There are currently no images in this category. We'll be adding more content "
+"soon."
+
+#: webpage/templates/galeria.html:270
+msgid "¿Te gustó lo que viste?"
+msgstr "Did you like what you saw?"
+
+#: webpage/templates/galeria.html:273
+msgid "Contactanos para más información o para reservar tu estadía."
+msgstr "Contact us for more information or to book your stay."
+
+#: webpage/templates/galeria.html:281
+msgid "Consultar por WhatsApp"
+msgstr "Ask on WhatsApp"
+
+#: webpage/templates/galeria.html:288
+msgid "Volver al inicio"
+msgstr "Back to home"
+
+# =========================
+# HOME - TRADUCCIONES ADICIONALES
+# =========================
+#: webpage/templates/index.html:99
+msgid ""
+"\n"
+"            Inspirada en el diseño nórdico, Stanza della Nonna ofrece una "
+"cálida estadía llena de luz, con madera natural, colores claros y grandes "
+"ventanales hacia el lago.\n"
+"            "
+msgstr ""
+"\n"
+"            Inspired by Nordic design, Stanza della Nonna offers a bright "
+"and warm stay featuring natural wood, light colors, and large windows "
+"overlooking the lake.\n"
+"            "
+
+#: webpage/templates/index.html:105
+msgid ""
+"\n"
+"            Su cocina integrada, el deck con vista y el calor del hogar a "
+"leña invitan a reconectar con lo esencial.\n"
+"            "
+msgstr ""
+"\n"
+"            Its open kitchen, lake-view deck, and wood-burning fireplace "
+"invite you to reconnect with what matters most.\n"
+"            "
+
+#: webpage/templates/index.html:111
+msgid ""
+"\n"
+"            Cercana al centro de esquí Cerro Catedral, al Hotel Llao Llao y "
+"a senderos únicos, es ideal para explorar la Patagonia desde un lugar "
+"tranquilo y acogedor.\n"
+"            "
+msgstr ""
+"\n"
+"            Close to Cerro Catedral ski resort, Llao Llao Hotel, and unique "
+"hiking trails, it's the perfect base for exploring Patagonia from a peaceful "
+"and welcoming home.\n"
+"            "
+
+#: webpage/templates/index.html:134
+msgid "Ver recorrido virtual"
+msgstr "Watch virtual tour"
+
+#: webpage/templates/index.html:137
+msgid "1:30 min de video"
+msgstr "1:30 min video"
+
+#: webpage/templates/index.html:147
+msgid "Video se carga aquí dinámicamente"
+msgstr "Video loads dynamically here"
+
+# =========================
+# HOME - NUEVAS TRADUCCIONES
+# =========================
+#: webpage/templates/index.html:178
+msgid "Estilo nórdico"
+msgstr "Nordic style"
+
+#: webpage/templates/index.html:181
+msgid ""
+"Ambientes amplios, mucha luz natural, madera clara y detalles minimalistas."
+msgstr ""
+"Spacious rooms, abundant natural light, light wood, and minimalist details."
+
+#: webpage/templates/index.html:190
+msgid "Vista al lago"
+msgstr "Lake view"
+
+#: webpage/templates/index.html:193
+msgid "Vista al Nahuel Huapi desde el deck y los ambientes principales."
+msgstr "Views of Lake Nahuel Huapi from the deck and main living areas."
+
+#: webpage/templates/index.html:202
+msgid "Hogar a leña"
+msgstr "Wood-burning fireplace"
+
+#: webpage/templates/index.html:205
+msgid ""
+"Chimenea moderna central, perfecta para tardes de lectura o reuniones "
+"cálidas."
+msgstr ""
+"Modern central fireplace, perfect for reading afternoons or cozy gatherings."
+
+#: webpage/templates/index.html:214
+msgid "WiFi rápido"
+msgstr "Fast WiFi"
+
+#: webpage/templates/index.html:217
+msgid "Ideal para teletrabajo o conectarte mientras descansás."
+msgstr "Ideal for remote work or staying connected while relaxing."
+
+#: webpage/templates/index.html:229
+msgid ""
+"A 3 cuadras de Bahía Serena, con acceso al Circuito Chico y al Cerro "
+"Catedral."
+msgstr ""
+"3 blocks from Bahía Serena, with access to Circuito Chico and Cerro Catedral."
+
+#: webpage/templates/index.html:238
+msgid "Tranquilidad"
+msgstr "Peace and quiet"
+
+#: webpage/templates/index.html:241
+msgid ""
+"Barrio residencial silencioso, ideal para descansar y reconectar con la "
+"naturaleza."
+msgstr ""
+"Quiet residential neighborhood, ideal for resting and reconnecting with "
+"nature."
+
+#: webpage/templates/index.html:260
+msgid "Conocé la casa en imágenes"
+msgstr "Get to know the house through photos"
+
+#: webpage/templates/index.html:263
+msgid ""
+"Explorá algunos rincones de Stanza della Nonna y descubrí todos los detalles "
+"en nuestra galería completa."
+msgstr ""
+"Explore some corners of Stanza della Nonna and discover all the details in "
+"our full gallery."
+
+#: webpage/templates/index.html:312
+msgid "Ver todas las fotos"
+msgstr "View all photos"
+
+# =========================
+# LAYOUTS - NUEVAS TRADUCCIONES
+# =========================
+#: webpage/templates/layouts/base.html:19
+#: webpage/templates/layouts/navbar.html:19
+msgid "Stanza della Nonna | Casa Nórdica en Bariloche"
+msgstr "Stanza della Nonna | Nordic House in Bariloche"
+
+#: webpage/templates/layouts/base.html:55
+#: webpage/templates/layouts/base.html:107
+#: webpage/templates/layouts/base.html:164
+#: webpage/templates/layouts/navbar.html:53
+#: webpage/templates/layouts/navbar.html:117
+msgid "La Casa"
+msgstr "The House"
+
+#: webpage/templates/layouts/base.html:76
+#: webpage/templates/layouts/base.html:114
+#: webpage/templates/layouts/navbar.html:66
+msgid "Contactar"
+msgstr "Contact"
+
+#: webpage/templates/layouts/base.html:162
+#: webpage/templates/layouts/navbar.html:115
+msgid "Enlaces"
+msgstr "Links"
+
+#: webpage/templates/layouts/base.html:168
+#: webpage/templates/layouts/navbar.html:120
+msgid "Reservar"
+msgstr "Book now"
+
+#: webpage/templates/layouts/navbar.html:90
+msgid ""
+"\n"
+"        Casa de alquiler en Bariloche. Naturaleza, comodidad y descanso "
+"asegurado.\n"
+"        "
+msgstr ""
+"\n"
+"        House rental in Bariloche. Nature, comfort, and guaranteed "
+"relaxation.\n"
+"        "
+
+#~ msgid ""
+#~ "Todas las comodidades de Stanza della Nonna en Bariloche: WiFi rápido, "
+#~ "calefacción central, chimenea, vista al lago, deck con parrilla y más. "
+#~ "Todo lo necesario para una estadía confortable."
+#~ msgstr ""
+#~ "All the amenities at Stanza della Nonna in Bariloche: high-speed WiFi, "
+#~ "central heating, fireplace, lake views, deck with grill, and more. "
+#~ "Everything you need for a comfortable stay."
+
+#~ msgid "Comodidades | Stanza della Nonna | Casa en Bariloche"
+#~ msgstr "Amenities | Stanza della Nonna | House in Bariloche"
+
+#~ msgid ""
+#~ "Descubrí todas las comodidades de nuestra casa nórdica en Bariloche, "
+#~ "pensadas para una estadía cómoda y tranquila."
+#~ msgstr ""
+#~ "Discover all the amenities of our Nordic-style house in Bariloche, "
+#~ "designed for a comfortable and peaceful stay."
+
+#~ msgid ""
+#~ "Todo lo necesario para una estadía cómoda y relajada en Bariloche, en un "
+#~ "entorno natural y tranquilo."
+#~ msgstr ""
+#~ "Everything you need for a comfortable and relaxing stay in Bariloche, in "
+#~ "a natural and peaceful setting."
+
+#~ msgid ""
+#~ "Vista al lago Nahuel Huapi desde el deck y los ambientes principales."
+#~ msgstr "Views of Lake Nahuel Huapi from the deck and main living areas."
+
+#~ msgid "Barrio residencial tranquilo"
+#~ msgstr "Quiet residential neighborhood"
+
+#~ msgid ""
+#~ "Ubicada en un barrio residencial silencioso, ideal para descansar y "
+#~ "desconectarse."
+#~ msgstr ""
+#~ "Located in a quiet residential neighborhood, ideal for resting and "
+#~ "disconnecting."
+
+#~ msgid "Ubicación estratégica"
+#~ msgstr "Prime location"
+
+#~ msgid ""
+#~ "A pocas cuadras de Bahía Serena y a mitad de camino entre el centro de "
+#~ "Bariloche y el Hotel Llao Llao."
+#~ msgstr ""
+#~ "Just a few blocks from Bahía Serena and halfway between downtown "
+#~ "Bariloche and Llao Llao Hotel."
+
+#~ msgid ""
+#~ "Sistema de calefacción central que mantiene una temperatura confortable "
+#~ "en toda la casa."
+#~ msgstr ""
+#~ "Central heating system that maintains a comfortable temperature "
+#~ "throughout the house."
+
+#~ msgid "Chimenea a leña ideal para crear un ambiente cálido y acogedor."
+#~ msgstr ""
+#~ "Wood-burning fireplace perfect for creating a warm and cozy atmosphere."
+
+#~ msgid ""
+#~ "Conexión WiFi de 300 Mbps simétricos, ideal para trabajo remoto y "
+#~ "streaming."
+#~ msgstr ""
+#~ "300 Mbps symmetrical WiFi connection, ideal for remote work and streaming."
+
+#~ msgid ""
+#~ "Cocina completa con horno y quemadores a gas, heladera con freezer y "
+#~ "utensilios."
+#~ msgstr ""
+#~ "Full kitchen with gas oven and burners, refrigerator with freezer, and "
+#~ "all cooking utensils."
+
+#~ msgid "Smart TV"
+#~ msgstr "Smart TV"
+
+#~ msgid "Smart TV para disfrutar de contenido propio durante la estadía."
+#~ msgstr "Smart TV to enjoy your own content during your stay."
+
+#~ msgid "Parrilla"
+#~ msgstr "Grill"
+
+#~ msgid ""
+#~ "Chulengo con elementos de asador para disfrutar comidas al aire libre."
+#~ msgstr "Traditional grill with all necessary tools for outdoor dining."
+
+#~ msgid "Sistema de alarma para mayor tranquilidad durante la estadía."
+#~ msgstr "Alarm system for added peace of mind during your stay."
+
+#~ msgid "Estacionamiento"
+#~ msgstr "Parking"
+
+#~ msgid "Contactanos directamente para reservar con el mejor precio."
+#~ msgstr "Contact us directly to book at the best price."
+
+
+#: webpage/templates/comodidades.html:224
+msgid "Fibra óptica ideal para teletrabajo"
+msgstr "Fiber optic internet ideal for remote work"
+
+msgid ""
+"Cocina equipada con horno a gas (red), heladera, microondas, pava eléctrica "
+"y cafetera"
+msgstr ""
+"Fully equipped kitchen with gas oven (mains), refrigerator, microwave, "
+"electric kettle and coffee maker"
+
+#: webpage/templates/comodidades.html:249
+msgid "Una lista completa de todo lo que encontrarás en Stanza della Nonna"
+msgstr "A complete list of everything you will find at Stanza della Nonna"
+
+#: webpage/templates/comodidades.html:256
+msgid "Todas"
+msgstr "All"
+
+msgid "Living y Comedor"
+msgstr "Living room and dining area"
+
+#: webpage/templates/comodidades.html:296
+msgid "Moderno hogar a leña, perfecto para reuniones familiares"
+msgstr "Modern wood-burning fireplace, perfect for family gatherings"
+
+#: webpage/templates/comodidades.html:312
+msgid "Calefacción central"
+msgstr "Central heating"
+
+#: webpage/templates/comodidades.html:313
+msgid "Temperatura uniforme en todos los ambientes"
+msgstr "Even temperature throughout the house"
+
+#: webpage/templates/comodidades.html:331
+msgid "Todo lo necesario para preparar tus comidas"
+msgstr "Everything you need to prepare your meals"
+
+#: webpage/templates/comodidades.html:347
+msgid "Heladera con freezer"
+msgstr "Refrigerator with freezer"
+
+#: webpage/templates/comodidades.html:348
+msgid "Amplia capacidad para almacenamiento de alimentos"
+msgstr "Ample space for food storage"
+
+#: webpage/templates/comodidades.html:365
+#, fuzzy
+#| msgid "Tres dormitorios cómodos, con ropa de cama y toallas incluidas."
+msgid "3 dormitorios con ropa de cama"
+msgstr "3 bedrooms with bed linens included"
+
+#: webpage/templates/comodidades.html:366
+msgid "Sábanas, mantas, edredones y almohadas para todos"
+msgstr "Sheets, blankets, duvets and pillows for all guests"
+
+#: webpage/templates/comodidades.html:262
+#: webpage/templates/comodidades.html:328
+#: webpage/templates/comodidades.html:345
+#: webpage/templates/comodidades.html:555
+msgid "Cocina"
+msgstr "Kitchen"
+
+#: webpage/templates/comodidades.html:271
+#: webpage/templates/comodidades.html:433
+#: webpage/templates/comodidades.html:450
+msgid "Tecnología"
+msgstr "Technology"

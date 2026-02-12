@@ -1,0 +1,487 @@
+{% extends 'layouts/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Reservá tu Casa ó Cabaña en Bariloche, Nahuel Malal norte| Contacto" %} | Stanza della Nonna{% endblock %}
+
+{% block head_extra %}
+<meta name="description" content="Reservá tu estadía en Stanza della Nonna. Contactanos por WhatsApp, mail o formulario y asegurá tu casa en Bariloche sin intermediarios.">
+<meta property="og:title" content="Reservá tu Casa en Bariloche | Contacto | Stanza della Nonna">
+<meta property="og:description" content="Reservá tu estadía en Stanza della Nonna la casa de Nahuel Malal norte. Contactanos por WhatsApp, mail o formulario y asegurá tu casa en Bariloche sin intermediarios.">
+<meta property="og:image" content="https://stanzadellanonna.com.ar/img/contacto-bariloche.jpg">
+<meta property="og:url" content="https://stanzadellanonna.com.ar/contacto">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Alquiler de Casa en Bariloche con Vista al Lago | Stanza della Nonna">
+<meta name="twitter:description" content="Alquiler de casa turística en Bariloche con vista al lago. Espaciosa, luminosa y equipada para 6 personas. Ideal para descansar o explorar la Patagonia.">
+<meta name="twitter:image" content="https://stanzadellanonna.com.ar/img/casa-bariloche-portada.jpg">
+
+<style>
+  /* Animaciones personalizadas */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  /* Efecto hover para tarjetas de contacto */
+  .contact-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Estilo para el mapa */
+  .map-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Efecto de ondas en botones */
+  .wave-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wave-effect::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+  }
+
+  .wave-effect:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+  }
+
+  @keyframes ripple {
+    0% {
+      transform: scale(0, 0);
+      opacity: 0.5;
+    }
+    20% {
+      transform: scale(60, 60);
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(100, 100);
+    }
+  }
+
+  /* Estilo para enlaces */
+  .contact-link {
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .contact-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+  }
+
+  .contact-link:hover::after {
+    width: 100%;
+  }
+
+  /* Efecto de entrada escalonada */
+  .stagger-item {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .stagger-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-amber-50">
+  <!-- Background pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-0 left-0 w-64 h-64 border border-amber-200 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 border border-amber-200 rounded-full translate-x-1/3 translate-y-1/3"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 animate-fade-in-up">
+      <span class="text-sm font-semibold text-amber-600 tracking-widest uppercase mb-4 block">
+        {% trans "Contacto Directo" %}
+      </span>
+      <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-gray-900 mb-6">
+        {% trans "Reservá tu experiencia" %}
+      </h1>
+      <p class="text-gray-600 text-xl max-w-3xl mx-auto">
+        {% trans "Coordiná directamente con nosotros, sin intermediarios, para obtener el mejor precio y atención personalizada." %}
+      </p>
+    </div>
+
+    <!-- CTA Principal -->
+    <div class="text-center mb-20">
+      <a href="https://wa.me/5492215114083?text=Hola!%20Me%20interesa%20reservar%20Stanza%20della%20Nonna%20en%20Bariloche."
+         class="group inline-flex items-center gap-4 bg-green-600 hover:bg-green-700 text-white px-10 py-5 rounded-full text-xl font-medium transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl wave-effect">
+        <svg class="w-7 h-7 group-hover:rotate-12 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.91-9.91-9.91zm5.23 13.58c-.33.92-1.59 1.68-2.58 1.87-.57.1-1.31.18-2.25-.37-.75-.43-1.29-1.01-2.04-1.61-1.42-1.17-2.35-2.62-2.58-2.97-.23-.35-.19-.8.08-1.12.24-.30.56-.47.94-.47.21 0 .42.05.60.16.18.10.42.31.67.56.25.25.49.55.70.83.19.26.39.52.56.77.17.25.31.50.44.73.13.23.23.45.30.66.07.21.10.40.10.58 0 .17-.03.33-.08.48-.05.15-.12.29-.21.42z"/>
+        </svg>
+        {% trans "Contactar por WhatsApp" %}
+      </a>
+      <p class="mt-6 text-gray-500 text-sm">
+        <svg class="inline w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+        {% trans "Respuesta en minutos - Descuento por reserva directa" %}
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Info Section -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <!-- Información de contacto -->
+      <div class="space-y-10">
+        <!-- Presentación -->
+        <div class="stagger-item">
+          <div class="flex items-start gap-4">
+            <div class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-7 h-7 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="font-serif text-2xl text-gray-900 mb-3">{% trans "¡Somos una familia local!" %}</h2>
+              <p class="text-gray-600 leading-relaxed">
+                {% trans "Estaremos encantados de coordinar directamente con vos. No dudes en escribirnos para cualquier consulta sobre tu estadía en Bariloche." %}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detalles de contacto -->
+        <div class="space-y-8">
+          <!-- Dirección -->
+          <div class="stagger-item">
+            <div class="contact-card bg-gray-50 rounded-2xl p-8 hover:bg-white border border-gray-100">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
+                  <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900">{% trans "Ubicación" %}</h3>
+              </div>
+              <div class="space-y-2">
+                <p class="text-gray-700"><strong>{% trans "Casa" %}:</strong> Stanza della Nonna</p>
+                <p class="text-gray-700"><strong>{% trans "Dirección" %}:</strong> Nahuel Malal norte (km 12.600)</p>
+                <p class="text-gray-700">Bariloche, Río Negro, Argentina</p>
+                <p class="text-sm text-gray-500 mt-4">
+                  <svg class="inline w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
+                  </svg>
+                  {% trans "Zona tranquila con vista al lago Nahuel Huapi" %}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contacto directo -->
+          <div class="stagger-item">
+            <div class="contact-card bg-gray-50 rounded-2xl p-8 hover:bg-white border border-gray-100">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center">
+                  <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900">{% trans "Contacto Directo" %}</h3>
+              </div>
+              <div class="space-y-4">
+                <!-- WhatsApp -->
+                <div class="group flex items-center gap-4 p-4 bg-white rounded-xl hover:bg-gray-50 transition-colors">
+                  <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.91-9.91-9.91zm5.23 13.58c-.33.92-1.59 1.68-2.58 1.87-.57.1-1.31.18-2.25-.37-.75-.43-1.29-1.01-2.04-1.61-1.42-1.17-2.35-2.62-2.58-2.97-.23-.35-.19-.8.08-1.12.24-.30.56-.47.94-.47.21 0 .42.05.60.16.18.10.42.31.67.56.25.25.49.55.70.83.19.26.39.52.56.77.17.25.31.50.44.73.13.23.23.45.30.66.07.21.10.40.10.58 0 .17-.03.33-.08.48-.05.15-.12.29-.21.42z"/>
+                    </svg>
+                  </div>
+                  <div class="flex-1">
+                    <p class="font-medium text-gray-900">WhatsApp</p>
+                    <a href="https://wa.me/5492215114083" 
+                       class="contact-link text-green-600 hover:text-green-700 font-semibold">
+                      +54 9 221 511 4083
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Email -->
+                <div class="group flex items-center gap-4 p-4 bg-white rounded-xl hover:bg-gray-50 transition-colors">
+                  <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                  </div>
+                  <div class="flex-1">
+                    <p class="font-medium text-gray-900">Email</p>
+                    <a href="mailto:info@stanzadellanonna.com.ar" 
+                       class="contact-link text-blue-600 hover:text-blue-700 font-semibold">
+                      info@stanzadellanonna.com.ar
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Redes Sociales -->
+          <div class="stagger-item">
+            <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+              <h3 class="text-xl font-semibold text-gray-900 mb-6">{% trans "Seguinos" %}</h3>
+              <div class="flex items-center gap-6">
+                <!-- Instagram -->
+                <a href="https://instagram.com/cabana.petite" 
+                   target="_blank"
+                   class="group flex items-center gap-3 text-gray-700 hover:text-pink-600 transition-colors">
+                  <div class="w-12 h-12 bg-pink-50 rounded-xl flex items-center justify-center group-hover:bg-pink-100 transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="font-medium">@cabana.petite</p>
+                    <p class="text-sm text-gray-500">{% trans "cabaña adyacente" %}</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mapa y Ventajas -->
+      <div class="space-y-10">
+        <!-- Mapa -->
+        <div class="stagger-item">
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d751.6214389159778!2d-71.44048501144208!3d-41.10207849041875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1743795340411!5m2!1ses!2sar"
+              width="100%" 
+              height="400" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Ubicación de Stanza della Nonna en Bariloche">
+            </iframe>
+          </div>
+          <p class="text-center text-gray-500 text-sm mt-4">
+            {% trans "Ubicación aproximada - Te enviamos las indicaciones exactas al reservar" %}
+          </p>
+        </div>
+
+        <!-- Ventajas de reservar directo -->
+        <div class="stagger-item">
+          <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border border-amber-100">
+            <h3 class="font-serif text-2xl text-gray-900 mb-6">{% trans "Ventajas de reservar directo" %}</h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-4">
+                <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-amber-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">{% trans "Mejor precio" %}</h4>
+                  <p class="text-gray-600 text-sm">{% trans "Hasta 15% menos que plataformas intermediarias" %}</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-amber-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">{% trans "Atención personalizada" %}</h4>
+                  <p class="text-gray-600 text-sm">{% trans "Coordinación directa con los dueños" %}</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-amber-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">{% trans "Flexibilidad" %}</h4>
+                  <p class="text-gray-600 text-sm">{% trans "Check-in/out adaptables según tu viaje" %}</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-amber-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">{% trans "Recomendaciones locales" %}</h4>
+                  <p class="text-gray-600 text-sm">{% trans "Consejos personalizados para tu estadía" %}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botón CTA adicional -->
+        <div class="stagger-item text-center">
+          <a href="https://wa.me/5492215114083?text=Hola!%20Quiero%20reservar%20Stanza%20della%20Nonna%20y%20tengo%20algunas%20preguntas."
+             class="inline-flex items-center gap-3 bg-gray-900 hover:bg-black text-white px-8 py-4 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+            {% trans "Hacé todas tus preguntas" %}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-20 bg-gradient-to-b from-white to-gray-50">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="font-serif text-3xl md:text-4xl text-gray-900 mb-4">
+        {% trans "Preguntas frecuentes" %}
+      </h2>
+      <p class="text-gray-600">
+        {% trans "Respondemos las dudas más comunes sobre tu reserva" %}
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      <!-- FAQ Item 1 -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex items-start justify-between">
+          <h3 class="text-lg font-semibold text-gray-900">{% trans "¿Cómo funciona el pago?" %}</h3>
+          <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+          </svg>
+        </div>
+        <p class="mt-3 text-gray-600">
+          {% trans "Pedimos una seña del 30% para confirmar la reserva. El saldo restante se paga al check-in. Aceptamos transferencias bancarias y Mercado Pago." %}
+        </p>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex items-start justify-between">
+          <h3 class="text-lg font-semibold text-gray-900">{% trans "¿Qué incluye la estadía?" %}</h3>
+          <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+          </svg>
+        </div>
+        <p class="mt-3 text-gray-600">
+          {% trans "Incluye todos los servicios (agua, luz, gas), WiFi, ropa de cama, toallas y cocina totalmente equipada. También te dejamos leña para la chimenea." %}
+        </p>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+        <div class="flex items-start justify-between">
+          <h3 class="text-lg font-semibold text-gray-900">{% trans "¿Cómo es el check-in y check-out?" %}</h3>
+          <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+          </svg>
+        </div>
+        <p class="mt-3 text-gray-600">
+          {% trans "Check-in a partir de las 15:00 hs y check-out hasta las 11:00 hs. Podemos ser flexibles según disponibilidad. Te enviamos las indicaciones exactas antes de tu llegada." %}
+        </p>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <p class="text-gray-600">
+        {% trans "¿Tenés otra pregunta?" %}
+        <a href="https://wa.me/5492215114083?text=Hola!%20Tengo%20una%20pregunta%20sobre%20la%20reserva..."
+           class="text-amber-600 hover:text-amber-700 font-semibold contact-link">
+          {% trans "Escribinos por WhatsApp" %}
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Animación de entrada escalonada
+  document.addEventListener('DOMContentLoaded', () => {
+    const staggerItems = document.querySelectorAll('.stagger-item');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    staggerItems.forEach(item => observer.observe(item));
+  });
+
+  // Efecto ripple para botones
+  document.querySelectorAll('.wave-effect').forEach(button => {
+    button.addEventListener('click', function(e) {
+      const x = e.clientX - e.target.getBoundingClientRect().left;
+      const y = e.clientY - e.target.getBoundingClientRect().top;
+      
+      const ripple = document.createElement('span');
+      ripple.style.left = x + 'px';
+      ripple.style.top = y + 'px';
+      ripple.classList.add('ripple');
+      
+      this.appendChild(ripple);
+      
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    });
+  });
+
+  // Smooth scroll para enlaces internos
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {

@@ -1,0 +1,104 @@
+{%  extends 'layouts/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Alquiler de Casa en Bariloche con Vista al Lago" %} | Stanza della Nonna{% endblock %}
+<link rel="prefetch" as="video" href="/media/stanza.mp4" type="video/mp4">
+{% block head_extra %}
+{% blocktrans %}<meta name="description" content="Disfrutá de una casa cómoda y luminosa en Bariloche, Nahuel Malal norte con vista al lago . Ideal para familias, hasta 6 personas. Reservá directamente con nosotros.">
+<meta property="og:title" content="Alquiler de Casa en Bariloche con Vista al Lago | Stanza della Nonna">
+<meta property="og:description" content="Alquiler de casa turística en Bariloche con vista al lago. Espaciosa, luminosa y equipada para 6 personas. Ideal para descansar o explorar la Patagonia.">{% endblocktrans %}
+<meta property="og:image" content="https://stanzadellanonna.com.ar/img/casa-bariloche-portada.jpg">
+<meta property="og:url" content="https://stanzadellanonna.com.ar">
+<meta property="og:type" content="website">
+<!-- Carga diferida y no bloqueante de Playfair Display -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'">
+
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</noscript>
+<link rel="preload" as="image" href="{% static 'portada.webp' %}" type="image/webp">
+{% endblock %}
+
+
+{% block content %}
+<script>
+  function prefetchVideo(url) {
+    if (!document.querySelector(`link[rel="prefetch"][href="${url}"]`)) {
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.as = 'video';
+      link.href = url;
+      link.type = 'video/mp4';
+      document.head.appendChild(link);
+    }
+  }
+</script>
+
+<!-- Alert debajo del navbar -->
+<div class="d-flex justify-content-center mt-2">
+  <div class="alert alert-warning alert-dismissible fade show py-2 px-10 rounded-pill"  style="position: absolute; top: 60px; left: 50%; transform: translateX(-50%); z-index: 1050;" role="alert" >
+     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell me-2" viewBox="0 0 16 16">
+    <path d="M8 16a2 2 0 0 0 1.985-1.75H6.015A2 2 0 0 0 8 16zm.104-14.995a1 1 0 0 1 1.19.858 5.002 5.002 0 0 1 3.8 4.848c0 1.098.395 2.193 1.07 3.06.253.336.09.792-.31.792H3.136c-.4 0-.564-.456-.31-.792a5.525 5.525 0 0 0 1.07-3.06 5.002 5.002 0 0 1 3.8-4.848 1 1 0 0 1 1.408-.06z"/>
+  </svg>{% trans "Disponible desde octubre 2025. ¡Gracias por tu interés!" %}
+    <button type="button" class="btn-close btn-close-sm" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+  </div>
+</div>
+ 
+
+    <div class="container text-center mt-2 mb-0 ">
+        <h1 class="display-3 fw-bold"   style="font-family: 'Playfair Display', serif;">Stanza della nonna</h1>
+        
+        <img src="{% static 'portada.webp' %}" alt="StanzaDellaNonna" 
+        class="img-fluid rounded mb-5 mt-5" 
+        width="600" height="338" 
+        style="max-width: 30%; height: auto; display: block; margin: auto;">
+    </div>
+    <div class="bg-light p-4 rounded mb-4 text-center">
+        <p class="mb-1">{% trans "Disponible para turismo y por temporadas." %}</p>
+        <p class="mb-1">{% trans "Ideal familias, hasta 6 personas." %}</p>
+        <p class="mb-1">{% trans "Calidez, comodidad y hermosa vista al lago Nahuel Huapi." %}</p>	
+        <p class="mb-0"> {% trans "Contacto" %}:<a href="https://wa.me/5492215114083?text=Hola!%20Te%20contacto%20desde%20la%20web."  class="mb-0" target="_blank"> +54 9 221 511-4083</a>
+        </p>
+    </div>
+    
+    <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-8">
+            <div class="mt-2 mx-auto" style="max-width: 700px;">
+                <p class="lead mt-2" style="text-align: justify;">{% trans "Con la calidez de lo familiar Stanza Della Nonna te recibe con ambientes cómodos y llenos de luz natural." %}</p>
+           
+            <div class="ratio ratio-16x9 my-4">
+              <video width="640" height="360" controls preload="metadata">
+                <source src="/media/stanza.mp4" type="video/mp4">
+                {% trans "Tu navegador no soporta la etiqueta de video." %}
+              </video>
+            </div>
+
+            </div>
+            <p class="lead mt-2">
+           {% blocktrans %}Desde todas las habitaciones podrás disfrutar de las mejores vistas al lago Nahuel Huapi y a las montañas patagónicas desde el comienzo del día, a través de sus ventanales.<br>
+<br>
+Cuenta con cocina completamente equipada y un amplio living con una gran chimenea, ideal para crear recuerdos en familia.<br>
+El gran deck exterior invita a relajarse contemplando los atardeceres reflejados sobre el lago y la península de San Pedro.<br>
+<br>
+Su ubicación estratégica permite, a pocos pasos, acceder a la costa del lago y disfrutar de “Bahía Serena”, la playa pública local, ubicada a tan solo 3 cuadras de la casa.<br>
+Caminar por la costa por las mañanas, contemplando las montañas y las aves en absoluta calma, es un verdadero placer.<br>
+<br>
+La casa se encuentra a mitad de camino entre el centro de Bariloche y el Hotel Llao Llao, con acceso directo al Circuito Chico: un recorrido escénico rodeado de lagos, bosques y montañas, con paradas emblemáticas como el Hotel Llao Llao, la Capilla San Eduardo y miradores panorámicos de la belleza de la región.<br>
+<br>
+Uno de los principales atractivos de la ciudad, el centro de esquí Cerro Catedral, está a solo 20 minutos.<br>
+El centro de Bariloche y su gran variedad de actividades están a solo 30 minutos.<br>
+<br>
+La casa está ubicada en un barrio residencial que prioriza el silencio y la tranquilidad, ideal para descansar y reconectarse con la naturaleza.<br>
+Con la particular ventaja de estar a tan solo tres cuadras de la Avenida Bustillo, donde encontrarás todo tipo de comercios, supermercados, cervecerías y parada de transporte público.{% endblocktrans %}
+          </div>
+        </div>
+      </div>
+
+
+
+{% endblock %}
